@@ -9,7 +9,667 @@
     <link href="assets/css/style.css" rel="stylesheet"/>
 </head>
 <body>
-<h1>Hello, world!</h1>
+
+<header>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Your Logo</a>
+                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                        class="navbar-toggler" data-bs-target="#navbarSupportedContent"
+                        data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a aria-current="page" class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                               role="button">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-disabled="true" class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <marquee>
+            Important Notice: It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+            Lorem Ipsum.
+        </marquee>
+    </div>
+</header>
+
+<section>
+    <div class="container-fluid">
+        <div class="carousel slide" id="carouselExampleCaptions">
+            <div class="carousel-indicators">
+                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                        data-bs-target="#carouselExampleCaptions" type="button"></button>
+                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleCaptions"
+                        type="button"></button>
+                <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleCaptions"
+                        type="button"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img alt="..." class="d-block w-100"
+                         src="https://dummyimage.com/1920x800/000/fff.png&text=Banner-1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img alt="..." class="d-block w-100"
+                         src="https://dummyimage.com/1920x800/000/fff.png&text=Banner-2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img alt="..." class="d-block w-100"
+                         src="https://dummyimage.com/1920x800/000/fff.png&text=Banner-3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleCaptions"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleCaptions"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid">
+        <div class="row pt-5 pb-5">
+            <div class="col-lg-5">
+                <img alt="..." class="img-fluid"
+                     src="https://dummyimage.com/800x500/000/fff.png&text=Banner-1">
+            </div>
+            <div class="col-lg-7">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>
+                            Why do we use it?
+                        </h2>
+                        <p>
+                            It is a long established fact that a reader will be distracted by the readable content of a
+                            page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                            more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                            here', making it look like readable English. Many desktop publishing packages and web page
+                            editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will
+                            uncover many web sites still in their infancy. Various versions have evolved over the years,
+                            sometimes by accident, sometimes on purpose (injected humour and the like).
+                        </p>
+                        <p>
+                            There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form, by injected humour, or randomised words which don't look
+                            even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
+                            sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+                            generators on the Internet tend to repeat predefined chunks as necessary, making this the
+                            first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined
+                            with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+                            The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
+                            non-characteristic words etc.
+                        </p>
+                        <p>
+                            There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form, by injected humour, or randomised words which don't look
+                            even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be
+                            sure there isn't anything embarrassing hidden in the middle of text.
+                        </p>
+                        <a class="btn btn-success" href="#">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-3 pb-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-3 pb-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-3 pb-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="btn btn-outline-secondary position-absolute">
+                                    10-12-2023
+                                </button>
+                                <p class="card-text mt-5">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </p>
+                                <div class="text-end">
+                                    <a href="#">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-3 pb-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid pt-3">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <img alt="..."
+                                 class="card-img-top img-fluid" src="https://dummyimage.com/350x200/000/fff.png&text=Event-1">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <div class="row border text-center pt-3 pb-2">
+                                    <div class="col-6 border-end">
+                                        <p>
+                                            Starts
+                                        </p>
+                                        <hr/>
+                                        <p>
+                                            08-10-2023
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>
+                                            Ends
+                                        </p>
+                                        <hr/>
+                                        <p>
+                                            09-10-2023
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-end mt-2">
+                                    <a class="btn btn-primary" href="#">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <img alt="..."
+                                 class="card-img-top img-fluid" src="https://dummyimage.com/350x200/000/fff.png&text=Event-2">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <div class="row border text-center pt-3 pb-2">
+                                    <div class="col-6 border-end">
+                                        <p>
+                                            Starts
+                                        </p>
+                                        <hr/>
+                                        <p>
+                                            08-10-2023
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>
+                                            Ends
+                                        </p>
+                                        <hr/>
+                                        <p>
+                                            09-10-2023
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-end mt-2">
+                                    <a class="btn btn-primary" href="#">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <img alt="..."
+                                 class="card-img-top img-fluid" src="https://dummyimage.com/350x200/000/fff.png&text=Event-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <div class="row border text-center pt-3 pb-2">
+                                    <div class="col-6 border-end">
+                                        <p>
+                                            Starts
+                                        </p>
+                                        <hr/>
+                                        <p>
+                                            08-10-2023
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>
+                                            Ends
+                                        </p>
+                                        <hr/>
+                                        <p>
+                                            09-10-2023
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-end mt-2">
+                                    <a class="btn btn-primary" href="#">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="bg-success pt-2 pb-2 border-bottom">
+                            <h3 class="text-center">Title</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container-fluid pt-3 pb-3">
+        <div class="row pb-3">
+            <div class="col-lg-2">
+                <h4>
+                    Demo School Name
+                </h4>
+                <p>
+                    Address
+                </p>
+                <p>
+                    Phone number
+                </p>
+                <p>
+                    Email
+                </p>
+            </div>
+            <div class="col-lg-8">
+                <iframe allowfullscreen=""
+                        height="250" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117658.79381583275!2d89.44986415000102!3d22.845507951883032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff9071cb47152f%3A0xf04b212290718952!2sKhulna!5e0!3m2!1sen!2sbd!4v1693657455666!5m2!1sen!2sbd" style="border:0;"
+                        width="100%"></iframe>
+            </div>
+            <div class="col-lg-2">
+                <h6>Important Links</h6>
+                <p>
+                    <a href="#">Link 1</a>
+                </p>
+                <p>
+                    <a href="#">Link 2</a>
+                </p>
+                <p>
+                    <a href="#">Link 3</a>
+                </p>
+                <p>
+                    <a href="#">Link 4</a>
+                </p>
+                <p>
+                    <a href="#">Link 5</a>
+                </p>
+            </div>
+        </div>
+        <hr/>
+        <div class="row pt-3 pb-2">
+            <div class="col-12 text-center">
+                <p>
+                    Copyright by Frogbid
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <script src="assets/vendor/Bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/jQuery/jquery-3.6.4.min.js"></script>
