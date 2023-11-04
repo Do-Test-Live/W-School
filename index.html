@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Demo School</title>
+
+    <title>Khulna University School</title>
+    <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon">
+
     <link href="assets/vendor/uikit/css/uikit.min.css" rel="stylesheet"/>
     <link href="assets/vendor/Bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="assets/vendor/FontAwesome/css/all.min.css" rel="stylesheet"/>
@@ -11,7 +14,7 @@
 </head>
 <body>
 
-<header>
+<header class="fixed-top">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -148,15 +151,16 @@
                 </div>
             </div>
         </nav>
+    </div>
+</header>
+
+<section style="margin-top: 4rem">
+    <div class="container-fluid">
         <marquee>
             **** ২০২৪ শিক্ষাবর্ষে নবম শ্রেণিতে ছাত্র ভর্তি বিজ্ঞপ্তি **** ২০২৪ শিক্ষাবর্ষে ছাত্র ভর্তি বিজ্ঞপ্তি-সংশোধিত
             (তৃতীয় ও ষষ্ঠ ) **** অফিস আদেশ ( অ্যাকাডেমিক ক্যালেন্ডার পরিবর্তন প্রসঙ্গে) ****
         </marquee>
-    </div>
-</header>
 
-<section>
-    <div class="container-fluid">
         <div class="carousel slide" id="carouselExampleCaptions">
             <div class="carousel-indicators">
                 <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
@@ -168,13 +172,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img alt="..." class="d-block w-100" src="https://dummyimage.com/1920x800/000/fff.png">
+                    <img alt="..." class="d-block w-100" src="assets/images/banner/1.jpg">
                 </div>
                 <div class="carousel-item">
-                    <img alt="..." class="d-block w-100" src="https://dummyimage.com/1920x800/000/fff.png">
+                    <img alt="..." class="d-block w-100" src="assets/images/banner/2.jpg">
                 </div>
                 <div class="carousel-item">
-                    <img alt="..." class="d-block w-100" src="https://dummyimage.com/1920x800/000/fff.png">
+                    <img alt="..." class="d-block w-100" src="assets/images/banner/3.jpg">
                 </div>
             </div>
             <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleCaptions"
@@ -198,18 +202,16 @@
                 <div class="uk-child-width-1 mx-auto" uk-grid>
                     <div>
                         <div class="uk-inline">
-                            <img src="https://dummyimage.com/400x500/000/fff.png&text=Banner-1" class="img-fluid"
+                            <img src="assets/images/about/1.png" class="img-fluid"
                                  alt="">
-                            <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                            <div class="uk-overlay uk-position-bottom"
+                                 style="background: linear-gradient(0deg,black,transparent);color: white">
                                 <p class="text-center">
-                                    <b>SULEMAN KHAN</b><br/><br/>
-                                    About Chairman<br/>
-                                    <small>
-                                        বর্তমান যুগ বিজ্ঞান ও তথ্য-প্রযুক্তির উৎকর্ষের যুগ। আধুনিক বিশ্বের সকল ...
-                                    </small>
+                                    <b>তাসলিমা তারু </b><br/>
+                                    সভাপতি
                                 </p>
                                 <div class="text-end">
-                                    <a href="#">
+                                    <a href="#" class="text-white">
                                         আরো পড়ুন
                                     </a>
                                 </div>
@@ -249,18 +251,16 @@
                 <div class="uk-child-width-1 mx-auto" uk-grid>
                     <div>
                         <div class="uk-inline">
-                            <img src="https://dummyimage.com/400x500/000/fff.png&text=Banner-1" class="img-fluid"
+                            <img src="assets/images/about/2.png" class="img-fluid"
                                  alt="">
-                            <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                            <div class="uk-overlay uk-position-bottom"
+                                 style="background: linear-gradient(0deg,black,transparent);color: white">
                                 <p class="text-center">
-                                    <b>Shameem Farhad</b><br/><br/>
-                                    About Principal<br/>
-                                    <small>
-                                        he magnificently, systematically and admirably designed Dhaka ...
-                                    </small>
+                                    <b>স্বর্ণকমল রায় </b><br/>
+                                    প্রধান শিক্ষক
                                 </p>
                                 <div class="text-end">
-                                    <a href="#">
+                                    <a href="#" class="text-white">
                                         আরো পড়ুন
                                     </a>
                                 </div>
@@ -280,7 +280,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="bg-success pt-2 pb-2">
-                            <h3 class="text-center">Administrative Notice</h3>
+                            <h3 class="text-center text-white">Administrative Notice</h3>
                         </div>
                     </div>
                     <div class="col-12">
@@ -348,7 +348,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="bg-success pt-2 pb-2">
-                            <h3 class="text-center">Academic Notice</h3>
+                            <h3 class="text-center text-white">Academic Notice</h3>
                         </div>
                     </div>
                     <div class="col-12">
@@ -416,7 +416,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="bg-success pt-2 pb-2">
-                            <h3 class="text-center">Examination/Result Notice</h3>
+                            <h3 class="text-center text-white">Examination/Result Notice</h3>
                         </div>
                     </div>
                     <div class="col-12">
@@ -485,7 +485,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="bg-success pt-2 pb-2">
-                            <h3 class="text-center">Tuition Fees Notice</h3>
+                            <h3 class="text-center text-white">Tuition Fees Notice</h3>
                         </div>
                     </div>
                     <div class="col-12">
@@ -558,8 +558,7 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-2">
-
-                <div class="bg-success h-100 d-flex justify-content-center align-items-center">
+                <div class="bg-success h-100 d-flex justify-content-center align-items-center text-white">
                     <div class="row">
                         <div class="col-12">
                             <div class="bg-success pt-2 pb-2 border-bottom">
@@ -619,8 +618,7 @@
                             <li>
                                 <div class="uk-card uk-card-default">
                                     <div class="uk-card-media-top">
-                                        <img src="https://dummyimage.com/350x200/000/fff.png&text=Event-1" width="1800"
-                                             height="1200" alt="">
+                                        <img src="assets/images/event/1.jpg" alt="">
                                     </div>
                                     <div class="uk-card-body">
                                         <h3 class="uk-card-title">RYRC এর RCRC Basic & First Aid প্রশিক্ষন</h3>
@@ -645,7 +643,7 @@
                                             </div>
                                         </div>
                                         <div class="text-end mt-3">
-                                            <a class="btn btn-primary" href="#">View</a>
+                                            <a class="btn btn-success" href="#">View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -653,8 +651,7 @@
                             <li>
                                 <div class="uk-card uk-card-default">
                                     <div class="uk-card-media-top">
-                                        <img src="https://dummyimage.com/350x200/000/fff.png&text=Event-2" width="1800"
-                                             height="1200" alt="">
+                                        <img src="assets/images/event/2.jpg" alt="">
                                     </div>
                                     <div class="uk-card-body">
                                         <h3 class="uk-card-title">জাতীয় শিক্ষাক্রম - ২০২২ বিষয়ক প্রশিক্ষন-২</h3>
@@ -679,7 +676,7 @@
                                             </div>
                                         </div>
                                         <div class="text-end mt-3">
-                                            <a class="btn btn-primary" href="#">View</a>
+                                            <a class="btn btn-success" href="#">View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -687,8 +684,7 @@
                             <li>
                                 <div class="uk-card uk-card-default">
                                     <div class="uk-card-media-top">
-                                        <img src="https://dummyimage.com/350x200/000/fff.png&text=Event-3" width="1800"
-                                             height="1200" alt="">
+                                        <img src="assets/images/event/3.jpg" alt="">
                                     </div>
                                     <div class="uk-card-body">
                                         <h3 class="uk-card-title">জাতীয় শিক্ষাক্রম - ২০২২ বিষয়ক প্রশিক্ষন-২</h3>
@@ -713,7 +709,7 @@
                                             </div>
                                         </div>
                                         <div class="text-end mt-3">
-                                            <a class="btn btn-primary" href="#">View</a>
+                                            <a class="btn btn-success" href="#">View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -721,8 +717,7 @@
                             <li>
                                 <div class="uk-card uk-card-default">
                                     <div class="uk-card-media-top">
-                                        <img src="https://dummyimage.com/350x200/000/fff.png&text=Event-4" width="1800"
-                                             height="1200" alt="">
+                                        <img src="assets/images/event/4.jpg" alt="">
                                     </div>
                                     <div class="uk-card-body">
                                         <h3 class="uk-card-title">৬৩তম বার্ষিক ক্রীড়া প্রতিযোগিতা-২০২৩</h3>
@@ -747,7 +742,7 @@
                                             </div>
                                         </div>
                                         <div class="text-end mt-3">
-                                            <a class="btn btn-primary" href="#">View</a>
+                                            <a class="btn btn-success" href="#">View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -755,8 +750,7 @@
                             <li>
                                 <div class="uk-card uk-card-default">
                                     <div class="uk-card-media-top">
-                                        <img src="https://dummyimage.com/350x200/000/fff.png&text=Event-5" width="1800"
-                                             height="1200" alt="">
+                                        <img src="assets/images/event/5.jpg" alt="">
                                     </div>
                                     <div class="uk-card-body">
                                         <h3 class="uk-card-title">14th DRMC National Science Carnival-023</h3>
@@ -781,7 +775,7 @@
                                             </div>
                                         </div>
                                         <div class="text-end mt-3">
-                                            <a class="btn btn-primary" href="#">View</a>
+                                            <a class="btn btn-success" href="#">View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -798,7 +792,7 @@
 
             </div>
             <div class="col-lg-2">
-                <div class="bg-success h-100 d-flex justify-content-center align-items-center">
+                <div class="bg-success h-100 d-flex justify-content-center align-items-center text-white">
                     <div class="row">
                         <div class="col-12">
                             <div class="bg-success pt-2 pb-2 border-bottom">
@@ -847,33 +841,33 @@
     </div>
 </section>
 
-<footer>
+<footer class="bg-light mt-3">
     <div class="container-fluid pt-3 pb-3">
         <div class="row pb-3">
-            <div class="col-lg-2">
+            <div class="col-lg-2" style="font-size: 15px;line-height: 14px;">
                 <h4>
-                    Demo School Name
+                    Khulna University School
                 </h4>
-                <p>
-                    Address
+                <p class="mt-3">
+                    RG3J+G2X Khulna University school, Khulna
                 </p>
                 <p>
-                    Phone number
+                    01000-000000
                 </p>
                 <p>
-                    Email
+                    sample@mail.com
                 </p>
             </div>
             <div class="col-lg-7">
                 <iframe allowfullscreen=""
-                        height="370" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117658.79381583275!2d89.44986415000102!3d22.845507951883032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff9071cb47152f%3A0xf04b212290718952!2sKhulna!5e0!3m2!1sen!2sbd!4v1693657455666!5m2!1sen!2sbd"
+                        height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.962096602227!2d89.52752217595251!3d22.803868324453124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff85161a7103a1%3A0xe4069681dc8a8292!2sKhulna%20University%20school!5e0!3m2!1sen!2sbd!4v1699097421965!5m2!1sen!2sbd"
                         style="border:0;"
                         width="100%"></iframe>
             </div>
-            <div class="col-lg-3">
-                <h6>গুরুত্বপূর্ণ লিংক</h6>
-                <p>
+            <div class="col-lg-3" style="font-size: 15px;line-height: 14px;">
+                <h5 class="fw-bolder">গুরুত্বপূর্ণ লিংক</h5>
+                <p class="mt-3">
                     <a href="#">এনটিআরসি</a>
                 </p>
                 <p>
