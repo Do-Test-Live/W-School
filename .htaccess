@@ -1,0 +1,13 @@
+ErrorDocument 404 https://kus.edu.bd/404.php
+
+RewriteEngine on
+
+RewriteRule ^Home index.php [NE,L]
+
+RewriteRule ^About-Institution about_institution.php [NE,L]
+
+RewriteRule ^Headmaster-Introduction introduction_headmaster.php [NE,L]
+
+RewriteRule ^Board-Member board_member_list.php [NE,L]
+
+RewriteRule ^Teachers teachers.php [NE,L]

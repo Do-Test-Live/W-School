@@ -1,3 +1,14 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.heading{
+    font-size: 1.75rem;
+}
+
+
 nav{
     background-color: #00afef;
     box-shadow: 0px 7px 4px 0px rgba(0,0,0,0.2);
@@ -25,7 +36,34 @@ nav{
     color: #f5831a !important;
 }
 .marquee-slider{
+    color: #00afef;
+    text-decoration: none;
+}
+
+.marquee-slider:hover{
     color: #f5831a;
+    text-decoration: none;
+}
+
+.footer-link:hover{
+    color: #00afef;
+    text-decoration: none;
+}
+
+.footer-link{
+    color: #f5831a;
+    text-decoration: none;
+}
+
+.footer-link-left{
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer-link-left:hover{
+    color: #000000;
+    font-weight: bold;
     text-decoration: none;
 }
 
@@ -64,6 +102,17 @@ nav{
     background-color: #f5831a;
 }
 
+.details-button{
+    background-color: #f5831a;
+    color: white;
+}
+
+.details-button:hover{
+    background-color: #00afef;
+    color: white;
+    text-decoration: none;
+}
+
 .uk-slider-container-offset{
     margin: 0 !important;
 }
@@ -80,24 +129,11 @@ ul {
     flex-wrap: wrap;
 }
 
-.gallery img {
-    background-position: top;
-    background-size: cover;
-    height: 200px;
-    width: 290px;
-    box-shadow: 0 2px 10px #000;
-    cursor: pointer;
-    transition: all 0.2s;
+.gallery img{
+    padding: 20px 10px;
 }
+
 .gallery img:hover {
     box-shadow: none;
     transform: scale(1.1);
-}
-.gallery{
-        margin-top: 1rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 290px));
-        grid-gap: 1rem;
-        padding: 1rem;
-        justify-content: center;
 }

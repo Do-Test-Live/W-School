@@ -1,0 +1,9 @@
+ErrorDocument 404 https://kus.edu.bd/404.php
+
+RewriteEngine on
+
+RewriteRule ^Register register.php [NE,L]
+RewriteRule ^Login login.php [NE,L]
+RewriteRule ^Insert insert.php [NE,L]
+RewriteRule ^Update update.php [NE,L]
+RewriteRule ^Delete delete.php [NE,L]
