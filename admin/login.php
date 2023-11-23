@@ -4,6 +4,14 @@ require_once("config/dbController.php");
 $db_handle = new DBController();
 date_default_timezone_set("Asia/Dhaka");
 
+if(isset($_SESSION['admin_id'])){
+    echo "
+    <script>
+    window.location.href = 'Dashboard';
+</script>
+    ";
+}
+
 if (isset($_POST['login'])) {
     $email = $db_handle->checkValue($_POST['email']);
     $password = $db_handle->checkValue($_POST['password']);
@@ -20,12 +28,24 @@ if (isset($_POST['login'])) {
 // Compare decrypted password with the user-provided password
     if ($decrypted === $password) {
         $insert_activity = $db_handle->insertQuery("INSERT INTO `activity`(`admin_id`, `start_time`) VALUES ({$select_admin[0]['admin_id']},'$inserted_at')");
+        $select_activity_id = $db_handle->runQuery("select activity_id from activity order by activity_id desc limit 1");
         // Passwords match, proceed with login
         $_SESSION['admin_id'] = $select_admin[0]['admin_id'];
-        echo "<script>alert('Password Match');</script>";
+        $_SESSION['activity_id'] = $select_activity_id[0]['activity_id'];
+        echo "
+        <script>
+        document.cookie = 'alert = 1;';
+        window.location.href = 'Dashboard';
+</script>
+        ";
     } else {
         // Passwords don't match
-        echo "<script>alert('Password Does not match');</script>";
+        echo "
+        <script>
+        document.cookie = 'alert = 5;';
+        window.location.href = 'Login';
+</script>
+        ";
     }
 }
 ?>
@@ -34,7 +54,7 @@ if (isset($_POST['login'])) {
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Your Company Name</title>
+    <title>Admin Login - Khulna University School </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description"/>
     <meta content="Themesbrand" name="author"/>
@@ -50,6 +70,7 @@ if (isset($_POST['login'])) {
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css"/>
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="assets/toastr/css/toastr.min.css">
 
 </head>
 
@@ -253,6 +274,8 @@ if (isset($_POST['login'])) {
 <script src="assets/libs/pace-js/pace.min.js"></script>
 <!-- password addon init -->
 <script src="assets/js/pages/pass-addon.init.js"></script>
+<script src="assets/toastr/js/toastr.min.js"></script>
+<script src="assets/js/toastr-init.js"></script>
 
 </body>
 

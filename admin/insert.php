@@ -21,7 +21,8 @@ if(isset($_POST['register'])){
     if($insert){
         echo "
         <script>
-        document.cookie = 'alert = 3;';
+        document.cookie = 'alert = 4;';
+        window.location.href = 'Register';
 </script>
         ";
     }

@@ -19,6 +19,7 @@
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/toastr/css/toastr.min.css">
 
 </head>
 
@@ -205,6 +206,9 @@
 
 <!-- validation init -->
 <script src="assets/js/pages/validation.init.js"></script>
+
+<script src="assets/toastr/js/toastr.min.js"></script>
+<script src="assets/js/toastr-init.js"></script>
 
 </body>
 
