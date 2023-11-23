@@ -9,4 +9,15 @@ RewriteRule ^Update update.php [NE,L]
 RewriteRule ^Delete delete.php [NE,L]
 RewriteRule ^Dashboard index.php [NE,L]
 RewriteRule ^Account_Approval account_approval.php [NE,L]
+RewriteRule ^Admin_Profile profile.php [NE,L]
+RewriteRule ^Edit_Profile edit_profile.php [NE,L]
+
+
+
+
+
+
+
+
+
 RewriteRule ^Logout logout.php [NE,L]

@@ -11,17 +11,16 @@ if(!isset($_SESSION['admin_id'])){
 </script>
     ";
 }
+
+$admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_SESSION['admin_id']}");
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8" />
     <title>Dashboard - Khulna University School</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Khulna University School" name="description" />
-    <meta content="FrogBid" name="author" />
-    <!--include css file-->
+    <!--include css files-->
     <?php include ('include/css.php');?>
 
 </head>
@@ -34,7 +33,7 @@ if(!isset($_SESSION['admin_id'])){
 <div id="layout-wrapper">
 
 
-    <!--include header-->
+    <!--including header-->
     <?php include ('include/header.php');?>
 
     <!-- ========== Left Sidebar Start ========== -->
@@ -50,7 +49,6 @@ if(!isset($_SESSION['admin_id'])){
 
         <div class="page-content">
             <div class="container-fluid">
-
                 <!-- start page title -->
                 <div class="row">
                     <div class="col-12">
@@ -68,7 +66,6 @@ if(!isset($_SESSION['admin_id'])){
                     </div>
                 </div>
                 <!-- end page title -->
-
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
                         <!-- card -->
@@ -180,9 +177,15 @@ if(!isset($_SESSION['admin_id'])){
 </div>
 <!-- END layout-wrapper -->
 
+
+<!-- Right Sidebar -->
+<?php include ('include/layout_design.php');?>
+<!-- /Right-bar -->
+
+
+
 <!-- JAVASCRIPT -->
 <?php include ('include/js.php');?>
-
 
 </body>
 

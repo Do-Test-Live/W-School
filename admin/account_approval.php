@@ -3,11 +3,11 @@ session_start();
 require_once("config/dbController.php");
 $db_handle = new DBController();
 date_default_timezone_set("Asia/Dhaka");
-
-if(!isset($_SESSION['admin_id'])){
+$admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_SESSION['admin_id']}");
+if(!isset($_SESSION['admin_id']) || $admin_details[0]['role'] != '0'){
     echo "
     <script>
-    window.location.href = 'Login';
+    window.location.href = 'Logout';
 </script>
     ";
 }
@@ -38,33 +38,7 @@ if(!isset($_SESSION['admin_id'])){
     <?php include ('include/header.php');?>
 
     <!-- ========== Left Sidebar Start ========== -->
-    <div class="vertical-menu">
-
-        <div data-simplebar class="h-100">
-
-            <!--- Sidemenu -->
-            <div id="sidebar-menu">
-                <!-- Left Menu Start -->
-                <ul class="metismenu list-unstyled" id="side-menu">
-                    <li class="menu-title" data-key="t-menu">Menu</li>
-                    <li>
-                        <a href="Dashboard">
-                            <i data-feather="home"></i>
-                            <span data-key="t-dashboard">Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Account_Approval">
-                            <i data-feather="users"></i>
-                            <span data-key="t-dashboard">Account Approval</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- Sidebar -->
-        </div>
-    </div>
+    <?php include ('include/sidebar.php');?>
     <!-- Left Sidebar End -->
 
 
@@ -81,12 +55,12 @@ if(!isset($_SESSION['admin_id'])){
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
+                            <h4 class="mb-sm-0 font-size-18">Account Approval</h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Khulna University School</a></li>
-                                    <li class="breadcrumb-item active">Dashboard</li>
+                                    <li class="breadcrumb-item active">Account Approval</li>
                                 </ol>
                             </div>
 
@@ -96,103 +70,53 @@ if(!isset($_SESSION['admin_id'])){
                 <!-- end page title -->
 
                 <div class="row">
-                    <div class="col-xl-3 col-md-6">
-                        <!-- card -->
-                        <div class="card card-h-100">
-                            <!-- card body -->
+                    <div class="col-12">
+                        <div class="card">
                             <div class="card-body">
-                                <div class="row align-items-center">
-                                    <div class="col-6">
-                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">My Wallet</span>
-                                        <h4 class="mb-3">
-                                            $<span class="counter-value" data-target="865.2">0</span>k
-                                        </h4>
-                                    </div>
-
-                                    <div class="col-6">
-                                        <div id="mini-chart1" data-colors='["#5156be"]' class="apex-charts mb-2"></div>
-                                    </div>
-                                </div>
-                                <div class="text-nowrap">
-                                    <span class="badge bg-soft-success text-success">+$20.9k</span>
-                                    <span class="ms-1 text-muted font-size-13">Since last week</span>
-                                </div>
-                            </div><!-- end card body -->
-                        </div><!-- end card -->
-                    </div><!-- end col -->
-
-                    <div class="col-xl-3 col-md-6">
-                        <!-- card -->
-                        <div class="card card-h-100">
-                            <!-- card body -->
-                            <div class="card-body">
-                                <div class="row align-items-center">
-                                    <div class="col-6">
-                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Number of Trades</span>
-                                        <h4 class="mb-3">
-                                            <span class="counter-value" data-target="6258">0</span>
-                                        </h4>
-                                    </div>
-                                    <div class="col-6">
-                                        <div id="mini-chart2" data-colors='["#5156be"]' class="apex-charts mb-2"></div>
-                                    </div>
-                                </div>
-                                <div class="text-nowrap">
-                                    <span class="badge bg-soft-danger text-danger">-29 Trades</span>
-                                    <span class="ms-1 text-muted font-size-13">Since last week</span>
-                                </div>
-                            </div><!-- end card body -->
-                        </div><!-- end card -->
-                    </div><!-- end col-->
-
-                    <div class="col-xl-3 col-md-6">
-                        <!-- card -->
-                        <div class="card card-h-100">
-                            <!-- card body -->
-                            <div class="card-body">
-                                <div class="row align-items-center">
-                                    <div class="col-6">
-                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Invested Amount</span>
-                                        <h4 class="mb-3">
-                                            $<span class="counter-value" data-target="4.32">0</span>M
-                                        </h4>
-                                    </div>
-                                    <div class="col-6">
-                                        <div id="mini-chart3" data-colors='["#5156be"]' class="apex-charts mb-2"></div>
-                                    </div>
-                                </div>
-                                <div class="text-nowrap">
-                                    <span class="badge bg-soft-success text-success">+ $2.8k</span>
-                                    <span class="ms-1 text-muted font-size-13">Since last week</span>
-                                </div>
-                            </div><!-- end card body -->
-                        </div><!-- end card -->
-                    </div><!-- end col -->
-
-                    <div class="col-xl-3 col-md-6">
-                        <!-- card -->
-                        <div class="card card-h-100">
-                            <!-- card body -->
-                            <div class="card-body">
-                                <div class="row align-items-center">
-                                    <div class="col-6">
-                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Profit Ration</span>
-                                        <h4 class="mb-3">
-                                            <span class="counter-value" data-target="12.57">0</span>%
-                                        </h4>
-                                    </div>
-                                    <div class="col-6">
-                                        <div id="mini-chart4" data-colors='["#5156be"]' class="apex-charts mb-2"></div>
-                                    </div>
-                                </div>
-                                <div class="text-nowrap">
-                                    <span class="badge bg-soft-success text-success">+2.95%</span>
-                                    <span class="ms-1 text-muted font-size-13">Since last week</span>
-                                </div>
-                            </div><!-- end card body -->
-                        </div><!-- end card -->
-                    </div><!-- end col -->
-                </div><!-- end row-->
+                                <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
+                                    <thead>
+                                    <tr>
+                                        <th>Sl No</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>Change Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    $select_account = $db_handle->runQuery("select * from admin order by admin_id desc");
+                                    $no_select_account = $db_handle->numRows("select * from admin order by admin_id desc");
+                                    for ($i=0; $i<$no_select_account; $i++){
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $i+1;?></td>
+                                            <td><?php echo $select_account[$i]['admin_name'];?></td>
+                                            <td><?php echo $select_account[$i]['admin_email'];?></td>
+                                            <td><?php
+                                                if($select_account[$i]['status'] == '1'){
+                                                    ?>
+                                                    <span class="badge bg-soft-success text-success">Approved</span>
+                                                    <?php
+                                                }else{
+                                                    ?>
+                                                    <span class="badge bg-soft-danger text-danger">Pending</span>
+                                                    <?php
+                                                }
+                                                ?></td>
+                                            <td><a href="Update?id=<?php echo $select_account[$i]['admin_id'];?>"><i class="fas fa-edit"></i></a></td>
+                                        </tr>
+                                        <?php
+                                    }
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- end cardaa -->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row-->
             </div>
             <!-- container-fluid -->
         </div>
@@ -205,6 +129,10 @@ if(!isset($_SESSION['admin_id'])){
 
 </div>
 <!-- END layout-wrapper -->
+
+<!-- Right Sidebar -->
+<?php include ('include/layout_design.php');?>
+<!-- /Right-bar -->
 
 <!-- JAVASCRIPT -->
 <?php include ('include/js.php');?>

@@ -13,12 +13,18 @@
                         <span data-key="t-dashboard">Dashboard</span>
                     </a>
                 </li>
-                <li>
-                    <a href="Account_Approval">
-                        <i data-feather="users"></i>
-                        <span data-key="t-dashboard">Account Approval</span>
-                    </a>
-                </li>
+                <?php
+                if($admin_details[0]['role'] == '0'){
+                    ?>
+                    <li>
+                        <a href="Account_Approval">
+                            <i data-feather="users"></i>
+                            <span data-key="t-dashboard">Account Approval</span>
+                        </a>
+                    </li>
+                    <?php
+                }
+                ?>
 
             </ul>
         </div>
