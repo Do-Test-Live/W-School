@@ -53,12 +53,12 @@ $teacher_info = $db_handle->runQuery("select * from teacher_info where teacher_i
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Profile</h4>
+                            <h4 class="mb-sm-0 font-size-18">প্রোফাইল</h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Khulna University School</a></li>
-                                    <li class="breadcrumb-item active">Profile</li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">খুলনা বিশ্ববিদ্যালয় স্কুল</a></li>
+                                    <li class="breadcrumb-item active">প্রোফাইল</li>
                                 </ol>
                             </div>
 
@@ -78,15 +78,10 @@ $teacher_info = $db_handle->runQuery("select * from teacher_info where teacher_i
                                                     <img src="<?php echo $admin_details[0]['profile_image'];?>" alt="" class="img-fluid rounded-circle d-block">
                                                 </div>
                                             </div>
-                                            <div class="flex-grow-1">
+                                            <div class="flex-grow-1 my-auto">
                                                 <div>
                                                     <h5 class="font-size-16 mb-1"><?php echo $admin_details[0]['admin_name'];?></h5>
                                                     <p class="text-muted font-size-13"><?php if($admin_details[0]['role'] == '0') echo 'প্রধান শিক্ষক'; else echo 'শিক্ষক';?></p>
-
-                                                    <div class="d-flex flex-wrap align-items-start gap-2 gap-lg-3 text-muted font-size-13">
-                                                        <div><i class="mdi mdi-circle-medium me-1 text-success align-middle"></i>Mathematics</div>
-                                                        <div><i class="mdi mdi-circle-medium me-1 text-success align-middle"></i>ICT</div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

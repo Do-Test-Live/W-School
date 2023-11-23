@@ -53,12 +53,12 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
+                            <h4 class="mb-sm-0 font-size-18">ড্যাশবোর্ড</h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Khulna University School</a></li>
-                                    <li class="breadcrumb-item active">Dashboard</li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">খুলনা বিশ্ববিদ্যালয় স্কুল</a></li>
+                                    <li class="breadcrumb-item active">ড্যাশবোর্ড</li>
                                 </ol>
                             </div>
 

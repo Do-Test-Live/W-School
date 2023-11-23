@@ -10,7 +10,7 @@
                 <li>
                     <a href="Dashboard">
                         <i data-feather="home"></i>
-                        <span data-key="t-dashboard">Dashboard</span>
+                        <span data-key="t-dashboard">ড্যাশবোর্ড</span>
                     </a>
                 </li>
                 <?php
@@ -19,7 +19,7 @@
                     <li>
                         <a href="Account_Approval">
                             <i data-feather="users"></i>
-                            <span data-key="t-dashboard">Account Approval</span>
+                            <span data-key="t-dashboard">একাউন্ট অনুমোদন</span>
                         </a>
                     </li>
                     <?php
