@@ -4,7 +4,7 @@ require_once("admin/config/dbController.php");
 $db_handle = new DBController();
 date_default_timezone_set("Asia/Dhaka");
 
-$fetch_institute_info = $db_handle->runQuery("select * from about_institution where id = '1'");
+$fetch_institute_info = $db_handle->runQuery("select * from yearly_plan where id = '1'");
 ?>
 
 <!doctype html>
@@ -12,7 +12,7 @@ $fetch_institute_info = $db_handle->runQuery("select * from about_institution wh
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>প্রতিষ্ঠান সম্পর্কে - খুলনা বিশ্ববিদ্যালয় স্কুল</title>
+    <title>বার্ষিক কর্ম পরিকল্পনা - খুলনা বিশ্ববিদ্যালয় স্কুল</title>
     <?php include ('include/css.php');?>
 </head>
 <body>

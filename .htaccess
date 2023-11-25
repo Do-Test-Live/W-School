@@ -6,6 +6,14 @@ RewriteRule ^Home index.php [NE,L]
 
 RewriteRule ^About-Institution about_institution.php [NE,L]
 
+RewriteRule ^Aim aim.php [NE,L]
+
+RewriteRule ^History history.php [NE,L]
+
+RewriteRule ^Structure structure.php [NE,L]
+
+RewriteRule ^Yearly_Plan yearly_plan.php [NE,L]
+
 RewriteRule ^Headmaster-Introduction introduction_headmaster.php [NE,L]
 
 RewriteRule ^Board-Member board_member_list.php [NE,L]
