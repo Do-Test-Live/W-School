@@ -14,6 +14,8 @@ RewriteRule ^Edit_Profile edit_profile.php [NE,L]
 RewriteRule ^About_Institution about_institution.php [NE,L]
 RewriteRule ^Aim aim.php [NE,L]
 RewriteRule ^History history.php [NE,L]
+RewriteRule ^Structure structure.php [NE,L]
+RewriteRule ^Year_Plan year_plan.php [NE,L]
 
 
 

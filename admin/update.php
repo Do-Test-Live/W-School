@@ -182,7 +182,7 @@ if(isset($_POST['update_aim'])){
         if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
             $image = '';
         } else {
-            $data = $db_handle->runQuery("select * FROM `about_institution` WHERE id = '1'");
+            $data = $db_handle->runQuery("select * FROM `aim` WHERE id = '1'");
             unlink($data[0]['image']);
             move_uploaded_file($file_tmp, "assets/img/banners/" . $file_name);
             $image = "assets/img/banners/" . $file_name;
@@ -214,7 +214,7 @@ if(isset($_POST['update_history'])){
         if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
             $image = '';
         } else {
-            $data = $db_handle->runQuery("select * FROM `about_institution` WHERE id = '1'");
+            $data = $db_handle->runQuery("select * FROM `history` WHERE id = '1'");
             unlink($data[0]['image']);
             move_uploaded_file($file_tmp, "assets/img/banners/" . $file_name);
             $image = "assets/img/banners/" . $file_name;
@@ -228,6 +228,70 @@ if(isset($_POST['update_history'])){
         <script>
             document.cookie = 'alert = 3';
             window.location.href='History';
+</script>";
+    }
+}
+
+if(isset($_POST['update_structure'])){
+    $description = $db_handle->checkValue($_POST['description']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `structure` WHERE id = '1'");
+            unlink($data[0]['image']);
+            move_uploaded_file($file_tmp, "assets/img/banners/" . $file_name);
+            $image = "assets/img/banners/" . $file_name;
+            $query .= ",`image`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("update structure set description = '$description',updated_at = '$updated_at' " . $query . " where id ='1'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='History';
+</script>";
+    }
+}
+
+if(isset($_POST['update_yearplan'])){
+    $description = $db_handle->checkValue($_POST['description']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `yearly_plan` WHERE id = '1'");
+            unlink($data[0]['image']);
+            move_uploaded_file($file_tmp, "assets/img/banners/" . $file_name);
+            $image = "assets/img/banners/" . $file_name;
+            $query .= ",`image`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("update yearly_plan set description = '$description',updated_at = '$updated_at' " . $query . " where id ='1'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Year_Plan';
 </script>";
     }
 }

@@ -17,7 +17,7 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>ইতিহাস - খুলনা বিশ্ববিদ্যালয় স্কুল</title>
+    <title>ভৌত অবকাঠামো - খুলনা বিশ্ববিদ্যালয় স্কুল</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--include css files-->
     <?php include('include/css.php'); ?>
@@ -51,13 +51,13 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">ইতিহাস</h4>
+                            <h4 class="mb-sm-0 font-size-18">ভৌত অবকাঠামো</h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">খুলনা বিশ্ববিদ্যালয়
                                             স্কুল</a></li>
-                                    <li class="breadcrumb-item active">ইতিহাস</li>
+                                    <li class="breadcrumb-item active">ভৌত অবকাঠামো</li>
                                 </ol>
                             </div>
 
@@ -78,7 +78,7 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                         </div>
                                         <div class="mb-3">
                                             <?php
-                                            $fetch_about_image = $db_handle->runQuery("select * from history where id = '1'");
+                                            $fetch_about_image = $db_handle->runQuery("select * from structure where id = '1'");
                                             ?>
                                             <img src="<?php echo $fetch_about_image[0]['image']; ?>"
                                                  style="max-width: 350px; height: auto;"/>
@@ -90,7 +90,7 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                         </div>
                                         <div class="text-center mt-4">
                                             <button type="submit" class="btn btn-primary waves-effect waves-light"
-                                                    name="update_history">সংরক্ষন করুন
+                                                    name="update_structure">সংরক্ষন করুন
                                             </button>
                                         </div>
                                     </form>
