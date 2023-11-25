@@ -11,6 +11,9 @@ RewriteRule ^Dashboard index.php [NE,L]
 RewriteRule ^Account_Approval account_approval.php [NE,L]
 RewriteRule ^Admin_Profile profile.php [NE,L]
 RewriteRule ^Edit_Profile edit_profile.php [NE,L]
+RewriteRule ^About_Institution about_institution.php [NE,L]
+RewriteRule ^Aim aim.php [NE,L]
+RewriteRule ^History history.php [NE,L]
 
 
 

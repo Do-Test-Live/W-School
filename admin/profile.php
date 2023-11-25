@@ -97,10 +97,10 @@ $teacher_info = $db_handle->runQuery("select * from teacher_info where teacher_i
 
                                 <ul class="nav nav-tabs-custom card-header-tabs border-top mt-4" id="pills-tab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link px-3 active" data-bs-toggle="tab" href="#overview" role="tab">About</a>
+                                        <a class="nav-link px-3 active" data-bs-toggle="tab" href="#overview" role="tab">পরিচিতি</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link px-3" data-bs-toggle="tab" href="#about" role="tab">Educational Background</a>
+                                        <a class="nav-link px-3" data-bs-toggle="tab" href="#about" role="tab">শিক্ষাগত যোগ্যতা</a>
                                     </li>
                                 </ul>
                             </div>
@@ -112,7 +112,7 @@ $teacher_info = $db_handle->runQuery("select * from teacher_info where teacher_i
                             <div class="tab-pane active" id="overview" role="tabpanel">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5 class="card-title mb-0">About</h5>
+                                        <h5 class="card-title mb-0">পরিচিতি</h5>
                                     </div>
                                     <div class="card-body">
                                         <div>
@@ -120,7 +120,7 @@ $teacher_info = $db_handle->runQuery("select * from teacher_info where teacher_i
                                                 <div class="row">
                                                     <div class="col-xl-2">
                                                         <div>
-                                                            <h5 class="font-size-15">Bio :</h5>
+                                                            <h5 class="font-size-15">নিজের সম্পর্কে :</h5>
                                                         </div>
                                                     </div>
                                                     <div class="col-xl">
@@ -135,7 +135,7 @@ $teacher_info = $db_handle->runQuery("select * from teacher_info where teacher_i
                                                 <div class="row">
                                                     <div class="col-xl-2">
                                                         <div>
-                                                            <h5 class="font-size-15">Experience :</h5>
+                                                            <h5 class="font-size-15">অভিজ্ঞতা :</h5>
                                                         </div>
                                                     </div>
                                                     <div class="col-xl">
@@ -156,7 +156,7 @@ $teacher_info = $db_handle->runQuery("select * from teacher_info where teacher_i
                             <div class="tab-pane" id="about" role="tabpanel">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5 class="card-title mb-0">Educational Background</h5>
+                                        <h5 class="card-title mb-0">শিক্ষাগত যোগ্যতা</h5>
                                     </div>
                                     <div class="card-body">
                                         <div>

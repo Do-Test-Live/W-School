@@ -25,6 +25,36 @@
                     <?php
                 }
                 ?>
+                <li>
+                    <a href="About_Institution">
+                        <i data-feather="monitor"></i>
+                        <span data-key="t-dashboard">প্রতিষ্ঠান সম্পর্কে</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Aim">
+                        <i data-feather="bookmark"></i>
+                        <span data-key="t-dashboard">লক্ষ্য ও উদ্দেশ্য</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="History">
+                        <i data-feather="corner-up-left"></i>
+                        <span data-key="t-dashboard">ইতিহাস</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Structure">
+                        <i data-feather="feather"></i>
+                        <span data-key="t-dashboard">ভৌত অবকাঠামো</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Year_Plan">
+                        <i data-feather="share-2"></i>
+                        <span data-key="t-dashboard">বার্ষিক কর্ম পরিকল্পনা</span>
+                    </a>
+                </li>
 
             </ul>
         </div>

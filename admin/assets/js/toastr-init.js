@@ -14,7 +14,7 @@ function getCookie(name) {
 console.log(x);
 
 if (x == 1) {
-    toastr.success("Login Successful", "Successful", {
+    toastr.success("লগইন সফল হয়েছে", "Successful", {
         timeOut: 3000,
         closeButton: !0,
         debug: !1,
@@ -38,7 +38,7 @@ if (x == 1) {
 }
 
 if (x == 2) {
-    toastr.success("Logout Successful", "Successful", {
+    toastr.success("লগ আউট সফল হয়েছে", "Successful", {
         timeOut: 3000,
         closeButton: !0,
         debug: !1,
@@ -62,7 +62,7 @@ if (x == 2) {
 }
 
 if (x == 3) {
-    toastr.success("Your Request Has been Successful", "Successful", {
+    toastr.success("আপনার অনুরোধ সঠিক ভাবে সম্পাদন হয়েছে", "Successful", {
         timeOut: 3000,
         closeButton: !0,
         debug: !1,
@@ -86,7 +86,7 @@ if (x == 3) {
 }
 
 if (x == 4) {
-    toastr.success("Your Account has been created successfully!", "Successful", {
+    toastr.success("আপনার একাউন্ট সঠিক ভাবে প্রস্তুত হয়েছে", "Successful", {
         timeOut: 3000,
         closeButton: !0,
         debug: !1,
@@ -110,7 +110,7 @@ if (x == 4) {
 }
 
 if (x == 5) {
-    toastr.error("Something went wrong", "Unsuccessful", {
+    toastr.error("কোনো কিছু ভুল হয়েছে", "Unsuccessful", {
         timeOut: 3000,
         closeButton: !0,
         debug: !1,
@@ -134,7 +134,7 @@ if (x == 5) {
 }
 
 if (x == 6) {
-    toastr.error("Old Password doesn't match", "Unsuccessful", {
+    toastr.error("পুরাতন পাসও্যার্ডটি মিলছে নাহ", "Unsuccessful", {
         timeOut: 3000,
         closeButton: !0,
         debug: !1,

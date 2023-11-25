@@ -76,11 +76,11 @@ if(!isset($_SESSION['admin_id']) || $admin_details[0]['role'] != '0'){
                                 <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                                     <thead>
                                     <tr>
-                                        <th>Sl No</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Status</th>
-                                        <th>Change Status</th>
+                                        <th>ক্রমিক নম্বর</th>
+                                        <th>নাম</th>
+                                        <th>ইমেইল</th>
+                                        <th>অবস্থা</th>
+                                        <th>অবস্থার পরিবর্তন</th>
                                     </tr>
                                     </thead>
                                     <tbody>

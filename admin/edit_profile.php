@@ -21,9 +21,6 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--include css files-->
     <?php include ('include/css.php');?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.21.0/ckeditor.js"
-            integrity="sha512-ff67djVavIxfsnP13CZtuHqf7VyX62ZAObYle+JlObWZvS4/VQkNVaFBOO6eyx2cum8WtiZ0pqyxLCQKC7bjcg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
@@ -72,7 +69,7 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Profile Image</h4>
+                                <h4 class="card-title">প্রোফাইলের ছবি</h4>
                             </div>
                             <div class="card-body">
                                 <div>
@@ -99,7 +96,7 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">About</h4>
+                                <h4 class="card-title">পরিচিতি</h4>
                             </div>
                             <div class="card-body">
                                 <div>
@@ -109,19 +106,19 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                     ?>
                                     <form action="Update" method="post">
                                         <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">Bio</label>
+                                            <label for="example-text-input" class="form-label">নিজের সম্পর্কে</label>
                                             <textarea class="form-control" name="bio" required><?php if($no_fetch > 0) echo $fetch[0]['bio'];?></textarea>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">Educational Details</label>
+                                            <label for="example-text-input" class="form-label">শিক্ষাগত যোগ্যতা</label>
                                             <textarea class="form-control" name="education" required><?php if($no_fetch > 0) echo $fetch[0]['education'];?></textarea>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">Experience</label>
+                                            <label for="example-text-input" class="form-label">অভিজ্ঞতা</label>
                                             <textarea class="form-control" name="experience" required><?php if($no_fetch > 0) echo $fetch[0]['experience'];?></textarea>
                                         </div>
                                         <div class="text-center mt-4">
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_bio">Save Changes</button>
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_bio">সংরক্ষন করুন</button>
                                         </div>
                                     </form>
                                 </div>
@@ -135,21 +132,21 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Update Password</h4>
+                                <h4 class="card-title">পাসওয়ার্ড পরিবর্তন</h4>
                             </div>
                             <div class="card-body">
                                 <div>
                                     <form action="Update" method="post">
                                         <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">Old Password</label>
+                                            <label for="example-text-input" class="form-label">পুরাতন পাসওয়ার্ড</label>
                                             <input type="password" class="form-control" name="old" required/>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">New Password</label>
+                                            <label for="example-text-input" class="form-label">নতুন পাসওয়ার্ড</label>
                                             <input type="password" class="form-control" name="new" required/>
                                         </div>
                                         <div class="text-center mt-4">
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_password">Update Password</button>
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_password">সংরক্ষন করুন</button>
                                         </div>
                                     </form>
                                 </div>

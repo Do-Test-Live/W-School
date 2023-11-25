@@ -134,3 +134,100 @@ if(isset($_POST['update_password'])){
             ";
     }
 }
+
+
+if(isset($_POST['update_institution_info'])){
+    $description = $db_handle->checkValue($_POST['description']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `about_institution` WHERE id = '1'");
+            unlink($data[0]['image']);
+            move_uploaded_file($file_tmp, "assets/img/banners/" . $file_name);
+            $image = "assets/img/banners/" . $file_name;
+            $query .= ",`image`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("update about_institution set description = '$description',updated_at = '$updated_at' " . $query . " where id ='1'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='About_Institution';
+</script>";
+    }
+}
+
+if(isset($_POST['update_aim'])){
+    $description = $db_handle->checkValue($_POST['description']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `about_institution` WHERE id = '1'");
+            unlink($data[0]['image']);
+            move_uploaded_file($file_tmp, "assets/img/banners/" . $file_name);
+            $image = "assets/img/banners/" . $file_name;
+            $query .= ",`image`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("update aim set description = '$description',updated_at = '$updated_at' " . $query . " where id ='1'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Aim';
+</script>";
+    }
+}
+
+if(isset($_POST['update_history'])){
+    $description = $db_handle->checkValue($_POST['description']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `about_institution` WHERE id = '1'");
+            unlink($data[0]['image']);
+            move_uploaded_file($file_tmp, "assets/img/banners/" . $file_name);
+            $image = "assets/img/banners/" . $file_name;
+            $query .= ",`image`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("update history set description = '$description',updated_at = '$updated_at' " . $query . " where id ='1'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='History';
+</script>";
+    }
+}
