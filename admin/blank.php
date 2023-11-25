@@ -17,7 +17,7 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Your Company Name</title>
+    <title>খুলনা বিশ্ববিদ্যালয় স্কুল</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--include css files-->
     <?php include ('include/css.php');?>

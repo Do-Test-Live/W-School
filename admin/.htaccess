@@ -16,6 +16,8 @@ RewriteRule ^Aim aim.php [NE,L]
 RewriteRule ^History history.php [NE,L]
 RewriteRule ^Structure structure.php [NE,L]
 RewriteRule ^Year_Plan year_plan.php [NE,L]
+RewriteRule ^Governing_Body governing_body.php [NE,L]
+RewriteRule ^Edit_Governing_body edit_governing_body.php [NE,L]
 
 
 

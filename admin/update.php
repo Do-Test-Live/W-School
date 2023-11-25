@@ -295,3 +295,40 @@ if(isset($_POST['update_yearplan'])){
 </script>";
     }
 }
+
+if(isset($_POST['update_governing_body'])){
+    $id = $db_handle->checkValue($_POST['id']);
+    $name = $db_handle->checkValue($_POST['name']);
+    $position = $db_handle->checkValue($_POST['position']);
+    $join_date = $db_handle->checkValue($_POST['join_date']);
+    $contact_no = $db_handle->checkValue($_POST['contact_no']);
+    $email = $db_handle->checkValue($_POST['email']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `governing_body` WHERE governing_body_id = '$id'");
+            unlink($data[0]['image']);
+            move_uploaded_file($file_tmp, "assets/img/governing_body/" . $file_name);
+            $image = "assets/img/governing_body/" . $file_name;
+            $query .= ",`image`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("update governing_body set `name`='$name',updated_at = '$updated_at',`position`='$position',`contact_no`='$contact_no',`email`='$email',`join_date`='$join_date' " . $query . " where governing_body_id ='$id'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Governing_Body';
+</script>";
+    }
+}

@@ -60,6 +60,20 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow">
+                            <i data-feather="sun"></i>
+                            <span data-key="t-apps">প্রশাসনিক তথ্য</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li>
+                                <a href="Governing_Body">
+                                    <i data-feather="stop-circle"></i>
+                                    <span data-key="t-dashboard">পরিচালনা পর্ষদ তথ্য</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <?php
                 }
                 ?>
