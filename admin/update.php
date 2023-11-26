@@ -73,12 +73,13 @@ if(isset($_POST['update_profile_image'])){
 
 if(isset($_POST['update_bio'])){
     $bio = $db_handle->checkValue($_POST['bio']);
+    $contact_no = $db_handle->checkValue($_POST['contact_no']);
     $education = $db_handle->checkValue($_POST['education']);
     $experience = $db_handle->checkValue($_POST['experience']);
 
     $check = $db_handle->numRows("select teacher_info_id from teacher_info where teacher_info_id = {$_SESSION['admin_id']}");
     if($check == 0){
-        $insert = $db_handle->insertQuery("INSERT INTO `teacher_info`(`bio`, `education`, `experience`) VALUES ('$bio','$education','$experience')");
+        $insert = $db_handle->insertQuery("INSERT INTO `teacher_info`(`bio`, `education`, `experience`,`contact_no`) VALUES ('$bio','$education','$experience','$contact_no')");
         if($insert){
             echo "
             <script>
@@ -88,7 +89,7 @@ if(isset($_POST['update_bio'])){
             ";
         }
     } else{
-        $update = $db_handle->insertQuery("UPDATE `teacher_info` SET `bio`='$bio',`education`='$education',`experience`='$experience' WHERE teacher_info_id = {$_SESSION['admin_id']}");
+        $update = $db_handle->insertQuery("UPDATE `teacher_info` SET `bio`='$bio',`education`='$education',`experience`='$experience',`contact_no` = '$contact_no' WHERE teacher_info_id = {$_SESSION['admin_id']}");
         if($update){
             echo "
             <script>
@@ -402,6 +403,44 @@ if(isset($_POST['update_headmaster'])) {
         <script>
             document.cookie = 'alert = 3';
             window.location.href='Headmaster_List';
+</script>";
+    }
+}
+
+if(isset($_POST['update_staff'])){
+    $id = $db_handle->checkValue($_POST['id']);
+    $name = $db_handle->checkValue($_POST['name']);
+    $name = $db_handle->checkValue($_POST['position']);
+    $join_date = $db_handle->checkValue($_POST['join_date']);
+    $leave_date = $db_handle->checkValue($_POST['leave_date']);
+    $present = $db_handle->checkValue($_POST['present']);
+    $position = $db_handle->checkValue($_POST['position']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `chairman_list` WHERE id = '$id'");
+            unlink($data[0]['image']);
+            move_uploaded_file($file_tmp, "assets/img/stuffs/" . $file_name);
+            $image = "assets/img/stuffs/" . $file_name;
+            $query .= ",`image`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("UPDATE `staffs` SET `name`='$name',`position`='$position',`join_date`='$join_date',`leave_date`='$leave_date',`present`='$present',`updated_at`='$updated_at' " . $query . " WHERE `id` = '$id'");
+    if ($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Staffs';
 </script>";
     }
 }

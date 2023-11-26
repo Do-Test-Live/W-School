@@ -23,3 +23,5 @@ RewriteRule ^Teachers teachers.php [NE,L]
 RewriteRule ^Chairman_List chairman_list.php [NE,L]
 
 RewriteRule ^Headmaster_List headmaster_list.php [NE,L]
+
+RewriteRule ^Staffs staff_list.php [NE,L]

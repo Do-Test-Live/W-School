@@ -106,6 +106,10 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                     ?>
                                     <form action="Update" method="post">
                                         <div class="mb-3">
+                                            <label for="example-text-input" class="form-label">মোবাইল নম্বর</label>
+                                            <input class="form-control" name="contact_no" required value="<?php echo $fetch[0]['contact_no'];?>">
+                                        </div>
+                                        <div class="mb-3">
                                             <label for="example-text-input" class="form-label">নিজের সম্পর্কে</label>
                                             <textarea class="form-control" name="bio" required><?php if($no_fetch > 0) echo $fetch[0]['bio'];?></textarea>
                                         </div>

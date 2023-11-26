@@ -23,7 +23,7 @@ date_default_timezone_set("Asia/Dhaka");
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h3 class="uk-text-bold">প্রধান শিক্ষদের তালিকা</h3>
+                <h3 class="uk-text-bold">প্রধান শিক্ষকদের তালিকা</h3>
             </div>
         </div>
     </div>

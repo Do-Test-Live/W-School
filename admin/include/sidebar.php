@@ -86,6 +86,20 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow">
+                            <i data-feather="airplay"></i>
+                            <span data-key="t-apps">শিক্ষক এবং কর্মচারী</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li>
+                                <a href="Staffs">
+                                    <i data-feather="box"></i>
+                                    <span data-key="t-dashboard">কর্মচারী তথ্য</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <?php
                 }
                 ?>

@@ -137,3 +137,35 @@ if(isset($_POST['insert_headmaster'])){
         </script>";
     }
 }
+
+if(isset($_POST['insert_stuff'])){
+    $name = $db_handle->checkValue($_POST['name']);
+    $join_date = $db_handle->checkValue($_POST['join_date']);
+    $end_date = $db_handle->checkValue($_POST['end_date']);
+    $present = $db_handle->checkValue($_POST['present']);
+    $position = $db_handle->checkValue($_POST['position']);
+    $image = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            move_uploaded_file($file_tmp, "assets/img/stuffs/" . $file_name);
+            $image = "assets/img/stuffs/" . $file_name;
+        }
+    }
+
+    $data = $db_handle->insertQuery("INSERT INTO `staffs`(`image`, `name`, `position`, `join_date`, `leave_date`, `inserted_at`,`present`) VALUES ('$image','$name','$position','$join_date','$end_date','$inserted_at','$present')");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Stuffs';
+        </script>";
+    }
+}

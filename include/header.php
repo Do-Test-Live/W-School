@@ -65,7 +65,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="Teachers">শিক্ষকবৃন্দের তালিকা</a></li>
-                                <li><a class="dropdown-item" href="#">কর্মচারীদের তালিকা</a></li>
+                                <li><a class="dropdown-item" href="Staffs">কর্মচারীদের তালিকা</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
