@@ -53,8 +53,8 @@
                                 <li><a class="dropdown-item" href="#">সভাপতির বাণী</a></li>
                                 <li><a class="dropdown-item" href="#">প্রধান শিক্ষকের বাণী</a></li>
                                 <li><a class="dropdown-item" href="Board-Member">পরিচালনা পর্ষদ তথ্য</a></li>
-                                <li><a class="dropdown-item" href="#">সভাপতির তালিকা</a></li>
-                                <li><a class="dropdown-item" href="#">প্রধান শিক্ষকের তালিকা</a></li>
+                                <li><a class="dropdown-item" href="Chairman_List">সভাপতির তালিকা</a></li>
+                                <li><a class="dropdown-item" href="Headmaster_List">প্রধান শিক্ষকের তালিকা</a></li>
                                 <li><a class="dropdown-item" href="#">NOC</a></li>
                             </ul>
                         </li>

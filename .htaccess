@@ -19,3 +19,7 @@ RewriteRule ^Headmaster-Introduction introduction_headmaster.php [NE,L]
 RewriteRule ^Board-Member board_member_list.php [NE,L]
 
 RewriteRule ^Teachers teachers.php [NE,L]
+
+RewriteRule ^Chairman_List chairman_list.php [NE,L]
+
+RewriteRule ^Headmaster_List headmaster_list.php [NE,L]
