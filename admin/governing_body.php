@@ -161,7 +161,7 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                             <td><?php
                                                 $joinDateStr = $fetch_governing_body[$i]['join_date'];
                                                 $joinDate = new DateTime($joinDateStr);
-                                                echo $formattedDate = date_format($joinDate, 'd M, Y');;?></td>
+                                                echo $formattedDate = date_format($joinDate, 'd M, Y');?></td>
                                             <td><a href="Edit_Governing_body?id=<?php echo $fetch_governing_body[$i]['governing_body_id'];?>"><i data-feather="pen-tool"></i></a></td>
                                         </tr>
                                         <?php
