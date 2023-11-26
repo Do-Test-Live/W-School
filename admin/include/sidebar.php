@@ -72,6 +72,18 @@
                                     <span data-key="t-dashboard">পরিচালনা পর্ষদ তথ্য</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="Chairman-List">
+                                    <i data-feather="user-plus"></i>
+                                    <span data-key="t-dashboard">সভাপতির তালিকা</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Headmaster_List">
+                                    <i data-feather="user-plus"></i>
+                                    <span data-key="t-dashboard">প্রধান শিক্ষকদের তালিকা</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <?php

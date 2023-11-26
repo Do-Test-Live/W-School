@@ -73,3 +73,67 @@ if (isset($_POST['insert_governing_body'])){
 </script>";
     }
 }
+
+
+if(isset($_POST['insert_chairman'])){
+    $name = $db_handle->checkValue($_POST['name']);
+    $join_date = $db_handle->checkValue($_POST['join_date']);
+    $end_date = $db_handle->checkValue($_POST['end_date']);
+    $present = $db_handle->checkValue($_POST['present']);
+    $image = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            move_uploaded_file($file_tmp, "assets/img/chairman/" . $file_name);
+            $image = "assets/img/chairman/" . $file_name;
+        }
+    }
+
+    $data = $db_handle->insertQuery("INSERT INTO `chairman_list`(`chairman_name`, `image`, `join_date`, `leave_date`,`present`) VALUES ('$name','$image','$join_date','$end_date','$present')");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Chairman-List';
+        </script>";
+    }
+}
+
+
+if(isset($_POST['insert_headmaster'])){
+    $name = $db_handle->checkValue($_POST['name']);
+    $join_date = $db_handle->checkValue($_POST['join_date']);
+    $end_date = $db_handle->checkValue($_POST['end_date']);
+    $present = $db_handle->checkValue($_POST['present']);
+    $image = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            move_uploaded_file($file_tmp, "assets/img/headmaster/" . $file_name);
+            $image = "assets/img/headmaster/" . $file_name;
+        }
+    }
+
+    $data = $db_handle->insertQuery("INSERT INTO `headmaster`(`headmaster_name`, `image`, `join_date`, `leave_date`,`present`) VALUES ('$name','$image','$join_date','$end_date','$present')");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Headmaster_List';
+        </script>";
+    }
+}

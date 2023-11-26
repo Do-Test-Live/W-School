@@ -18,6 +18,10 @@ RewriteRule ^Structure structure.php [NE,L]
 RewriteRule ^Year_Plan year_plan.php [NE,L]
 RewriteRule ^Governing_Body governing_body.php [NE,L]
 RewriteRule ^Edit_Governing_body edit_governing_body.php [NE,L]
+RewriteRule ^Chairman-List cahirman_list.php [NE,L]
+RewriteRule ^Edit_Chairman_List edit_cahirman_list.php [NE,L]
+RewriteRule ^Headmaster_List headmaster_list.php [NE,L]
+RewriteRule ^Edit_Headmaster_List edit_headmaster_list.php [NE,L]
 
 
 
