@@ -100,6 +100,18 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="Complains">
+                            <i data-feather="alert-triangle"></i>
+                            <span data-key="t-dashboard">অভিযোগ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Activity">
+                            <i data-feather="activity"></i>
+                            <span data-key="t-dashboard">এ্যাকটিভিটি লগ</span>
+                        </a>
+                    </li>
                     <?php
                 }
                 ?>

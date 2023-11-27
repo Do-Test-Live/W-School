@@ -127,7 +127,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">অভিযোগ বাক্স</a>
+                            <a href="Complain" class="nav-link">অভিযোগ বাক্স</a>
                         </li>
                     </ul><!--
                     <form class="d-flex" role="search">
