@@ -90,7 +90,7 @@
                                 সহ পাঠ্যক্রম
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">ক্রীড়া কার্যক্রম</a></li>
+                                <li><a class="dropdown-item" href="Sports">ক্রীড়া কার্যক্রম</a></li>
                                 <li><a class="dropdown-item" href="#">সাংস্কৃতিক কার্যক্রম</a></li>
                                 <li><a class="dropdown-item" href="#">স্কাউটস</a></li>
                                 <li><a class="dropdown-item" href="#">রেড ক্রিসেন্ট</a></li>

@@ -26,6 +26,8 @@ RewriteRule ^Staffs stuffs.php [NE,L]
 RewriteRule ^Edit_Staffs edit_stuffs.php [NE,L]
 RewriteRule ^Complains complain_list.php [NE,L]
 RewriteRule ^Activity activity_log.php [NE,L]
+RewriteRule ^Extracurricular extracurricular.php [NE,L]
+RewriteRule ^Edit_Extracurricular edit_extracurricular.php [NE,L]
 
 
 

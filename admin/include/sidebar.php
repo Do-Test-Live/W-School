@@ -101,6 +101,12 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="Extracurricular">
+                            <i data-feather="anchor"></i>
+                            <span data-key="t-dashboard">সহ পাঠ্যক্রম</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="Complains">
                             <i data-feather="alert-triangle"></i>
                             <span data-key="t-dashboard">অভিযোগ</span>

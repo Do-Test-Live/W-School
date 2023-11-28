@@ -27,3 +27,5 @@ RewriteRule ^Headmaster_List headmaster_list.php [NE,L]
 RewriteRule ^Staffs staff_list.php [NE,L]
 
 RewriteRule ^Complain complain.php [NE,L]
+
+RewriteRule ^Sports sports.php [NE,L]

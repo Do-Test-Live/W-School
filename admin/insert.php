@@ -169,3 +169,33 @@ if(isset($_POST['insert_stuff'])){
         </script>";
     }
 }
+
+if(isset($_POST['insert_extracurriculam'])){
+    $caption = $db_handle->checkValue($_POST['caption']);
+    $page = $db_handle->checkValue($_POST['page']);
+
+    $image = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            move_uploaded_file($file_tmp, "assets/img/extracurriculam/" . $file_name);
+            $image = "assets/img/extracurriculam/" . $file_name;
+        }
+    }
+
+    $data = $db_handle->insertQuery("INSERT INTO `extracurricular`(`image`, `image_caption`, `page`, `inserted_at`) VALUES ('$image','$caption','$page','$inserted_at')");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Extracurricular';
+        </script>";
+    }
+}
