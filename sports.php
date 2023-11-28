@@ -1,3 +1,11 @@
+<?php
+session_start();
+require_once("admin/config/dbController.php");
+$db_handle = new DBController();
+date_default_timezone_set("Asia/Dhaka");
+
+$id = $_GET['id'];
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +15,7 @@
     <?php include ('include/css.php');?>
     <style>
         .fixed-top{
-            z-index: unset !important;
+            z-index: 1 !important;
         }
     </style>
 </head>
@@ -22,7 +30,28 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h3 class="uk-text-bold">ক্রীড়া কার্যক্রম</h3>
+                <h3 class="uk-text-bold">
+                    <?php
+                    if($id == 1)
+                        echo 'ক্রীড়া কার্যক্রম';
+                    if($id == 2)
+                        echo 'সাংস্কৃতিক কার্যক্রম';
+                    if($id == 3)
+                        echo 'স্কাউটস';
+                    if($id == 4)
+                        echo 'রেড ক্রিসেন্ট';
+                    if($id == 5)
+                        echo 'শিক্ষা সফর';
+                    if($id == 6)
+                        echo 'স্টুডেন্ট ক্যাবিনেট';
+                    if($id == 7)
+                        echo 'ডিবেটিং ক্লাব';
+                    if($id == 8)
+                        echo 'ল্যাংগুয়েজ ক্লাব';
+                    if($id == 9)
+                        echo 'বিজ্ঞান মেলা';
+                    ?>
+                </h3>
             </div>
         </div>
     </div>
@@ -30,21 +59,19 @@
 <section class="mt-5 mb-5">
     <div class="container">
         <div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: fade">
-            <div>
-                <a class="uk-inline" href="assets/images/banner/1.jpg" data-caption="Caption 1">
-                    <img src="assets/images/banner/1.jpg" width="1800" height="1200" alt="">
-                </a>
-            </div>
-            <div>
-                <a class="uk-inline" href="assets/images/banner/2.jpg" data-caption="Caption 2">
-                    <img src="assets/images/banner/2.jpg" width="1800" height="1200" alt="">
-                </a>
-            </div>
-            <div>
-                <a class="uk-inline" href="assets/images/banner/3.jpg" data-caption="Caption 3">
-                    <img src="assets/images/banner/3.jpg" width="1800" height="1200" alt="">
-                </a>
-            </div>
+            <?php
+            $fetch = $db_handle->runQuery("select * from extracurricular where eid='1' order by eid desc");
+            $no = $db_handle->numRows("select * from extracurricular where eid='1' order by eid desc");
+            for ($i=0; $i<$no; $i++){
+                ?>
+                <div>
+                    <a class="uk-inline" href="admin/<?php echo $fetch[$i]['image'];?>" data-caption="<?php echo $fetch[$i]['image_caption'];?>">
+                        <img src="admin/<?php echo $fetch[$i]['image'];?>" width="1800" height="1200" alt="">
+                    </a>
+                </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </section>

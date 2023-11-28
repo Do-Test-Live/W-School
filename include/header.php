@@ -90,16 +90,15 @@
                                 সহ পাঠ্যক্রম
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="Sports">ক্রীড়া কার্যক্রম</a></li>
-                                <li><a class="dropdown-item" href="#">সাংস্কৃতিক কার্যক্রম</a></li>
-                                <li><a class="dropdown-item" href="#">স্কাউটস</a></li>
-                                <li><a class="dropdown-item" href="#">রেড ক্রিসেন্ট</a></li>
-                                <li><a class="dropdown-item" href="#">শিক্ষা সফর</a></li>
-                                <li><a class="dropdown-item" href="#">স্টুডেন্ট ক্যাবিনেট</a></li>
-                                <li><a class="dropdown-item" href="#">ডিবেটিং ক্লাব</a></li>
-                                <li><a class="dropdown-item" href="#">ল্যাংগুয়েজ ক্লাব</a></li>
-                                <li><a class="dropdown-item" href="#">বিজ্ঞান মেলা</a></li>
-                                <li><a class="dropdown-item" href="#"></a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=1">ক্রীড়া কার্যক্রম</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=2">সাংস্কৃতিক কার্যক্রম</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=3">স্কাউটস</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=4">রেড ক্রিসেন্ট</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=5">শিক্ষা সফর</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=6">স্টুডেন্ট ক্যাবিনেট</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=7">ডিবেটিং ক্লাব</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=8">ল্যাংগুয়েজ ক্লাব</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=9">বিজ্ঞান মেলা</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
