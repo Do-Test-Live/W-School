@@ -107,6 +107,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="Admission">
+                            <i data-feather="briefcase"></i>
+                            <span data-key="t-dashboard">ভর্তি সংক্রান্ত তথ্য</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="Complains">
                             <i data-feather="alert-triangle"></i>
                             <span data-key="t-dashboard">অভিযোগ</span>

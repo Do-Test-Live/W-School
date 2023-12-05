@@ -17,7 +17,7 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Edit Profile - Khulna University School</title>
+    <title>ভর্তি সংক্রান্ত তথ্য - খুলনা বিশ্ববিদ্যালয় স্কুল</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--include css files-->
     <?php include ('include/css.php');?>
@@ -52,12 +52,12 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">প্রোফাইল পরিবর্তন</h4>
+                            <h4 class="mb-sm-0 font-size-18">ভর্তি সংক্রান্ত তথ্য</h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">খুলনা বিশ্ববিদ্যালয় স্কুল</a></li>
-                                    <li class="breadcrumb-item active">প্রোফাইল পরিবর্তন</li>
+                                    <li class="breadcrumb-item active">ভর্তি সংক্রান্ত তথ্য</li>
                                 </ol>
                             </div>
 
@@ -69,97 +69,88 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">প্রোফাইলের ছবি</h4>
-                            </div>
-                            <div class="card-body">
-                                <div>
-                                    <form action="Update" class="dropzone dz-clickable" id="profileImage" method="post" enctype="multipart/form-data">
-                                        <div class="dz-message needsclick">
-                                            <div class="mb-3">
-                                                <i class="display-4 text-muted bx bx-cloud-upload"></i>
-                                            </div>
-                                            <h5>Drop files here or click to upload.</h5>
-                                            <input type="file" name="profile_image" style="display: none;" />
-                                        </div>
-                                        <div class="text-center mt-4">
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_profile_image">Save Files</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end col -->
-                </div>
-                <!-- end row-->
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">পরিচিতি</h4>
+                                <h4 class="card-title">প্রস্পেক্টাস</h4>
                             </div>
                             <div class="card-body">
                                 <div>
                                     <?php
-                                    $fetch = $db_handle->runQuery("select * from teacher_info where teacher_info_id = {$_SESSION['admin_id']}");
-                                    $no_fetch = $db_handle->numRows("select * from teacher_info where teacher_info_id = {$_SESSION['admin_id']}");
+                                    $fetch = $db_handle->runQuery("select * from admission_info where id = '1'");
                                     ?>
-                                    <form action="Update" method="post">
+                                    <form action="Update" method="post" enctype="multipart/form-data">
                                         <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">মোবাইল নম্বর</label>
-                                            <input class="form-control" name="contact_no" required value="<?php echo $fetch[0]['contact_no'];?>">
+                                            <label for="example-text-input" class="form-label">প্রস্পেক্টাস</label>
+                                            <input class="form-control" type="file" name="prospectus" accept="application/pdf">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">নিজের সম্পর্কে</label>
-                                            <textarea class="form-control" name="bio" required><?php if($no_fetch > 0) echo $fetch[0]['bio'];?></textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">শিক্ষাগত যোগ্যতা</label>
-                                            <textarea class="form-control" name="education" required><?php if($no_fetch > 0) echo $fetch[0]['education'];?></textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">অভিজ্ঞতা</label>
-                                            <textarea class="form-control" name="experience" required><?php if($no_fetch > 0) echo $fetch[0]['experience'];?></textarea>
+                                            <iframe src="<?php echo $fetch[0]['filelink'];?>" width="500" height="500"></iframe>
                                         </div>
                                         <div class="text-center mt-4">
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_bio">সংরক্ষন করুন</button>
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_prospectus">সংরক্ষন করুন</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- end col -->
                 </div>
-
-
+                <!-- end row-->
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">পাসওয়ার্ড পরিবর্তন</h4>
+                                <h4 class="card-title">ভর্তির নিয়ামাবলি</h4>
                             </div>
                             <div class="card-body">
                                 <div>
-                                    <form action="Update" method="post">
+                                    <?php
+                                    $fetch = $db_handle->runQuery("select * from admission_info where id = '2'");
+                                    ?>
+                                    <form action="Update" method="post" enctype="multipart/form-data">
                                         <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">পুরাতন পাসওয়ার্ড</label>
-                                            <input type="password" class="form-control" name="old" required/>
+                                            <label for="example-text-input" class="form-label">ভর্তির নিয়ামাবলি</label>
+                                            <input class="form-control" type="file" name="prospectus" accept="application/pdf">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="example-text-input" class="form-label">নতুন পাসওয়ার্ড</label>
-                                            <input type="password" class="form-control" name="new" required/>
+                                            <iframe src="<?php echo $fetch[0]['filelink'];?>" width="500" height="500"></iframe>
                                         </div>
                                         <div class="text-center mt-4">
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_password">সংরক্ষন করুন</button>
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_admission_rules">সংরক্ষন করুন</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- end col -->
+                    </div>
                 </div>
-
+                <!-- end row-->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">ভর্তি পরিক্ষার সিলেবাস</h4>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <?php
+                                    $fetch = $db_handle->runQuery("select * from admission_info where id = '3'");
+                                    ?>
+                                    <form action="Update" method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="example-text-input" class="form-label">ভর্তি পরিক্ষার সিলেবাস</label>
+                                            <input class="form-control" type="file" name="prospectus" accept="application/pdf">
+                                        </div>
+                                        <div class="mb-3">
+                                            <iframe src="<?php echo $fetch[0]['filelink'];?>" width="500" height="500"></iframe>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_admission_syllabus">সংরক্ষন করুন</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- container-fluid -->
         </div>
@@ -182,19 +173,6 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
 
 <!-- JAVASCRIPT -->
 <?php include ('include/js.php');?>
-
-<script>
-    Dropzone.options.profileImage = {
-        paramName: "profile_image",
-        acceptedFiles: ".png, .jpg, .jpeg",
-        addRemoveLinks: true,
-        maxFiles: 1
-    };
-
-    CKEDITOR.replace('education');
-    CKEDITOR.replace('bio');
-    CKEDITOR.replace('experience');
-</script>
 
 </body>
 

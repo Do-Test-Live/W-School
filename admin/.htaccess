@@ -28,6 +28,7 @@ RewriteRule ^Complains complain_list.php [NE,L]
 RewriteRule ^Activity activity_log.php [NE,L]
 RewriteRule ^Extracurricular extracurricular.php [NE,L]
 RewriteRule ^Edit_Extracurricular edit_extracurricular.php [NE,L]
+RewriteRule ^Admission admission.php [NE,L]
 
 
 
