@@ -115,16 +115,20 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                             <input class="form-control" name="contact_no" required value="<?php echo $fetch[0]['contact_no'];?>">
                                         </div>
                                         <div class="mb-3">
+                                            <label for="example-text-input" class="form-label">বিষয়ের নাম</label>
+                                            <input class="form-control" name="subject" required value="<?php echo $fetch[0]['subject'];?>">
+                                        </div>
+                                        <div class="mb-3">
                                             <label for="example-text-input" class="form-label">নিজের সম্পর্কে</label>
-                                            <textarea class="form-control" name="bio" required><?php if($no_fetch > 0) echo $fetch[0]['bio'];?></textarea>
+                                            <textarea class="form-control" name="bio"><?php if($no_fetch > 0) echo $fetch[0]['bio'];?></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label for="example-text-input" class="form-label">শিক্ষাগত যোগ্যতা</label>
-                                            <textarea class="form-control" name="education" required><?php if($no_fetch > 0) echo $fetch[0]['education'];?></textarea>
+                                            <textarea class="form-control" name="education"><?php if($no_fetch > 0) echo $fetch[0]['education'];?></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label for="example-text-input" class="form-label">অভিজ্ঞতা</label>
-                                            <textarea class="form-control" name="experience" required><?php if($no_fetch > 0) echo $fetch[0]['experience'];?></textarea>
+                                            <textarea class="form-control" name="experience"><?php if($no_fetch > 0) echo $fetch[0]['experience'];?></textarea>
                                         </div>
                                         <div class="text-center mt-4">
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_bio">সংরক্ষন করুন</button>

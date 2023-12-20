@@ -72,10 +72,11 @@ if(isset($_POST['update_bio'])){
     $contact_no = $db_handle->checkValue($_POST['contact_no']);
     $education = $db_handle->checkValue($_POST['education']);
     $experience = $db_handle->checkValue($_POST['experience']);
+    $subject = $db_handle->checkValue($_POST['subject']);
 
     $check = $db_handle->numRows("select teacher_info_id from teacher_info where admin_id = {$_SESSION['admin_id']}");
     if($check == 0){
-        $insert = $db_handle->insertQuery("INSERT INTO `teacher_info`(`bio`, `education`, `experience`,`contact_no`,`admin_id`) VALUES ('$bio','$education','$experience','$contact_no',{$_SESSION['admin_id']})");
+        $insert = $db_handle->insertQuery("INSERT INTO `teacher_info`(`bio`, `education`, `experience`,`contact_no`,`admin_id`,`subject`) VALUES ('$bio','$education','$experience','$contact_no',{$_SESSION['admin_id']},'$subject')");
         if($insert){
             echo "
             <script>
@@ -85,7 +86,7 @@ if(isset($_POST['update_bio'])){
             ";
         }
     } else{
-        $update = $db_handle->insertQuery("UPDATE `teacher_info` SET `bio`='$bio',`education`='$education',`experience`='$experience',`contact_no` = '$contact_no' WHERE admin_id = {$_SESSION['admin_id']}");
+        $update = $db_handle->insertQuery("UPDATE `teacher_info` SET `bio`='$bio',`education`='$education',`experience`='$experience',`contact_no` = '$contact_no',`subject` = '$subject' WHERE admin_id = {$_SESSION['admin_id']}");
         if($update){
             echo "
             <script>

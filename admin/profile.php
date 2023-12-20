@@ -81,7 +81,7 @@ $teacher_info = $db_handle->runQuery("select * from teacher_info where admin_id 
                                             <div class="flex-grow-1 my-auto">
                                                 <div>
                                                     <h5 class="font-size-16 mb-1"><?php echo $admin_details[0]['admin_name'];?></h5>
-                                                    <p class="text-muted font-size-13"><?php if($admin_details[0]['role'] == '0') echo 'প্রধান শিক্ষক'; else echo 'শিক্ষক';?></p>
+                                                    <p class="text-muted font-size-13"><?php if($admin_details[0]['role'] == '0') echo 'প্রধান শিক্ষক (' . $teacher_info[0]['subject'].')'; else echo 'সহকারি শিক্ষক (' . $teacher_info[0]['subject'].')';?></p>
                                                     <p class="text-muted font-size-13">মোবাইল নম্বরঃ <?php echo $teacher_info[0]['contact_no'];?></p>
                                                 </div>
                                             </div>

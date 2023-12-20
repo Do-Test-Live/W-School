@@ -15,6 +15,10 @@ date_default_timezone_set("Asia/Dhaka");
         p{
             font-size: 20px;
         }
+        a{
+            color: black;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -28,31 +32,34 @@ date_default_timezone_set("Asia/Dhaka");
     <div class="container">
         <div class="row mt-5 mb-3">
             <div class="col-12 text-center">
-                <h3 class="uk-text-bold">শিক্ষকবৃন্দের তালিকা</h3>
+                <h3 class="uk-text-bold mt-5">শিক্ষকবৃন্দের তালিকা</h3>
             </div>
         </div>
-        <div class="uk-child-width-1-4@m" uk-grid>
+        <div class="uk-child-width-1-3@m" uk-grid>
             <?php
-            $fetch = $db_handle->runQuery("select * from admin, teacher_info where admin.admin_id = teacher_info.admin_id and admin.status='1';");
-            $no = $db_handle->numRows("select * from admin, teacher_info where admin.admin_id = teacher_info.admin_id");
+            $fetch = $db_handle->runQuery("select * from admin, teacher_info where admin.admin_id = teacher_info.admin_id and admin.status='1' order by admin.admin_id;");
+            $no = $db_handle->numRows("select * from admin, teacher_info where admin.admin_id = teacher_info.admin_id order by admin.admin_id");
             for ($i=0; $i<$no; $i++){
                 ?>
-                    <div>
-                        <div class="uk-card uk-card-default">
-                            <div class="uk-card-media-top">
-                                <img src="admin/<?php echo $fetch[$i]['profile_image'];?>" width="1800" height="1200" alt="">
-                            </div>
-                            <div class="uk-card-body text-center">
+                <div>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="admin/<?php echo $fetch[$i]['profile_image'];?>" width="1800" height="1200" alt="">
+                        </div>
+                        <div class="uk-card-body">
+                            <div class="text-center">
                                 <h3 class="uk-card-title"><?php echo $fetch[$i]['admin_name'];?></h3>
                                 <p><?php
                                     if($fetch[$i]['role'] == '0')
-                                        echo 'Head Master';
-                                    else echo 'Assistant Teacher';
+                                        echo 'প্রধান শিক্ষক (' . $fetch[$i]['subject'].')';
+                                    else echo 'সহকারি শিক্ষক (' . $fetch[$i]['subject'].')';
                                     ?></p>
-                                <p>CN: <?php echo $fetch[$i]['contact_no'];?></p>
+                                <a style="font-size: 20px; font-weight:bold;" href="callto: +88<?php echo $fetch[$i]['contact_no'];?>"><?php echo $fetch[$i]['contact_no'];?></a></br>
+                                <a href="mailto:<?php echo $fetch[$i]['admin_email'];?>"><span uk-icon="mail"></span> <?php echo $fetch[$i]['admin_email'];?></a>
                             </div>
                         </div>
                     </div>
+                </div>
                 <?php
             }
             ?>
