@@ -137,3 +137,7 @@ ul {
     box-shadow: none;
     transform: scale(1.1);
 }
+
+.uk-form-label{
+    font-size: 18px !important;
+}

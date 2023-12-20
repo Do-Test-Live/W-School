@@ -33,9 +33,4 @@ RewriteRule ^Admission admission.php [NE,L]
 
 
 
-
-
-
-
-
 RewriteRule ^Logout logout.php [NE,L]

@@ -11,6 +11,11 @@ date_default_timezone_set("Asia/Dhaka");
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Khulna University School</title>
     <?php include('include/css.php'); ?>
+    <style>
+        p{
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -26,33 +31,28 @@ date_default_timezone_set("Asia/Dhaka");
                 <h3 class="uk-text-bold">শিক্ষকবৃন্দের তালিকা</h3>
             </div>
         </div>
-        <div class="uk-child-width-1-4@m gap-4" uk-grid>
+        <div class="uk-child-width-1-4@m" uk-grid>
             <?php
-            $fetch = $db_handle->runQuery("select * from admin, teacher_info where admin.admin_id = teacher_info.teacher_info_id");
-            $no = $db_handle->numRows("select * from admin, teacher_info where admin.admin_id = teacher_info.teacher_info_id");
+            $fetch = $db_handle->runQuery("select * from admin, teacher_info where admin.admin_id = teacher_info.admin_id and admin.status='1';");
+            $no = $db_handle->numRows("select * from admin, teacher_info where admin.admin_id = teacher_info.admin_id");
             for ($i=0; $i<$no; $i++){
                 ?>
-                <div class="uk-card uk-card-default">
-                    <div class="uk-card-header">
-                        <div class="uk-grid-small uk-flex-middle" uk-grid>
-                            <div class="uk-width-auto">
-                                <img class="uk-border-circle" width="60" height="60" src="admin/<?php echo $fetch[$i]['profile_image'];?>" alt="Avatar">
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="admin/<?php echo $fetch[$i]['profile_image'];?>" width="1800" height="1200" alt="">
                             </div>
-                            <div class="uk-width-expand">
-                                <h3 class="uk-card-title uk-margin-remove-bottom"><?php echo $fetch[$i]['admin_name'];?></h3>
-                                <p class="uk-text-meta uk-margin-remove-top"><?php if($fetch[$i]['role'] == '0') echo 'প্রধান শিক্ষক'; else echo 'শিক্ষক';?></p>
+                            <div class="uk-card-body text-center">
+                                <h3 class="uk-card-title"><?php echo $fetch[$i]['admin_name'];?></h3>
+                                <p><?php
+                                    if($fetch[$i]['role'] == '0')
+                                        echo 'Head Master';
+                                    else echo 'Assistant Teacher';
+                                    ?></p>
+                                <p>CN: <?php echo $fetch[$i]['contact_no'];?></p>
                             </div>
                         </div>
                     </div>
-                    <div class="uk-card-body">
-                        <p><?php $bio = $fetch[$i]['bio'];
-                            echo substr($bio, 0, 500);?>...</p>
-                        <p>মোমাইল নম্বরঃ <?php echo $fetch[$i]['contact_no'];?></p>
-                    </div>
-                    <div class="uk-card-footer">
-                        <a href="#" class="uk-button uk-button-text">বিস্তারিত দেখুন</a>
-                    </div>
-                </div>
                 <?php
             }
             ?>

@@ -65,9 +65,13 @@
         <div class="row pt-3 pb-2">
             <div class="col-12 text-center">
                 <p>
-                    Copyright by Frogbid
+                    © <span id="year"></span> Khulna University School All Rights Reserved
+                </p>
+                <p>
+                    Developed With <a href="https://frogbid.com/" target="_blank">FrogBID</a>
                 </p>
             </div>
         </div>
     </div>
 </footer>
+

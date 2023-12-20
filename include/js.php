@@ -5,3 +5,8 @@
 <script src="assets/vendor/OwlCarousel/js/owl.carousel.min.js"></script>
 <script src="assets/vendor/datatables/datatables.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+    const d = new Date();
+    let year = d.getFullYear();
+    document.getElementById("year").innerHTML = year;
+</script>

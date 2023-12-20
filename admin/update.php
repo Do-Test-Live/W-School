@@ -35,39 +35,35 @@ if(isset($_GET['id'])){
 }
 
 if(isset($_POST['update_profile_image'])){
-    $image = 'Test Image';
+    $image = '';
     $query = '';
-    echo "File Name: " . $_FILES['profile_image']['name'] . "<br>";
-    echo "File Size: " . $_FILES['profile_image']['size'] . "<br>";
-    echo "File Type: " . $_FILES['profile_image']['type'] . "<br>";
-    echo "File Temp Name: " . $_FILES['profile_image']['tmp_name'] . "<br>";
-    if (!empty($_FILES['profile_image']['name'])) {
+    if (!empty($_FILES['image']['name'])) {
         $RandomAccountNumber = mt_rand(1, 99999);
-        $file_name = $RandomAccountNumber . "_" . $_FILES['profile_image']['name'];
-        $file_size = $_FILES['profile_image']['size'];
-        $file_tmp = $_FILES['profile_image']['tmp_name'];
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
 
         $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
         if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
             $image = '';
         } else {
-            $data = $db_handle->runQuery("select * FROM `admin` WHERE admin_id = {$_SESSION['admin_id']}'");
+            $data = $db_handle->runQuery("select * FROM `admin` WHERE admin_id = {$_SESSION['admin_id']}");
             unlink($data[0]['profile_image']);
             move_uploaded_file($file_tmp, "assets/img/teachers/" . $file_name);
             $image = "assets/img/teachers/" . $file_name;
-            $query .= ",`profile_image`='" . $image . "'";
+           echo $query .= "`profile_image`='" . $image . "'";
+
         }
     }
 
     $data = $db_handle->insertQuery("update admin set " . $query . " where admin_id={$_SESSION['admin_id']}");
     if($data){
-        echo $image;
-    }
-    echo $image;
-   /* echo "<script>
+        echo "
+        <script>
                 document.cookie = 'alert = 3;';
                 window.location.href='Admin_Profile';
-                </script>";*/
+                </script>";
+    }
 }
 
 
@@ -77,9 +73,9 @@ if(isset($_POST['update_bio'])){
     $education = $db_handle->checkValue($_POST['education']);
     $experience = $db_handle->checkValue($_POST['experience']);
 
-    $check = $db_handle->numRows("select teacher_info_id from teacher_info where teacher_info_id = {$_SESSION['admin_id']}");
+    $check = $db_handle->numRows("select teacher_info_id from teacher_info where admin_id = {$_SESSION['admin_id']}");
     if($check == 0){
-        $insert = $db_handle->insertQuery("INSERT INTO `teacher_info`(`bio`, `education`, `experience`,`contact_no`) VALUES ('$bio','$education','$experience','$contact_no')");
+        $insert = $db_handle->insertQuery("INSERT INTO `teacher_info`(`bio`, `education`, `experience`,`contact_no`,`admin_id`) VALUES ('$bio','$education','$experience','$contact_no',{$_SESSION['admin_id']})");
         if($insert){
             echo "
             <script>
@@ -89,7 +85,7 @@ if(isset($_POST['update_bio'])){
             ";
         }
     } else{
-        $update = $db_handle->insertQuery("UPDATE `teacher_info` SET `bio`='$bio',`education`='$education',`experience`='$experience',`contact_no` = '$contact_no' WHERE teacher_info_id = {$_SESSION['admin_id']}");
+        $update = $db_handle->insertQuery("UPDATE `teacher_info` SET `bio`='$bio',`education`='$education',`experience`='$experience',`contact_no` = '$contact_no' WHERE admin_id = {$_SESSION['admin_id']}");
         if($update){
             echo "
             <script>
@@ -446,34 +442,42 @@ if(isset($_POST['update_staff'])){
 }
 
 
-if(isset($_POST['update_extracurriculam'])){
+if (isset($_POST['update_extracurriculam'])) {
     $id = $db_handle->checkValue($_POST['id']);
     $caption = $db_handle->checkValue($_POST['caption']);
-    $page = $db_handle->checkValue($_POST['page']);
+    $description = $db_handle->checkValue($_POST['description']);
     $image = '';
     $query = '';
-    if (!empty($_FILES['image']['name'])) {
-        $RandomAccountNumber = mt_rand(1, 99999);
-        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
-        $file_size = $_FILES['image']['size'];
-        $file_tmp = $_FILES['image']['tmp_name'];
+    $uploaded_file_names = []; // Array to store uploaded file names
 
-        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
-            $image = '';
-        } else {
-            $data = $db_handle->runQuery("select * FROM `extracurricular` WHERE eid = '$id'");
-            unlink($data[0]['image']);
-            move_uploaded_file($file_tmp, "assets/img/extracurriculam/" . $file_name);
-            $image = "assets/img/extracurriculam/" . $file_name;
-            $query .= ",`image`='" . $image . "'";
+    if (!empty($_FILES['image']['tmp_name'][0])) {
+        // At least one image is selected
+
+        $dataFileName = []; // Array to store the file names
+
+        // Loop through each uploaded image file
+        foreach ($_FILES['image']['tmp_name'] as $index => $uploadedFile) {
+            $originalFileName = $_FILES['image']['name'][$index];
+            $file_tmp = $_FILES['image']['tmp_name'][$index];
+            $RandomAccountNumber = mt_rand(1, 99999);
+            $dataFileName[] = 'assets/img/extracurriculam/' . $RandomAccountNumber . '_' . $originalFileName;
+            move_uploaded_file($file_tmp, "assets/img/extracurriculam/" . $RandomAccountNumber . '_' . $originalFileName);
+        }
+
+        $databaseValue = implode(',', $dataFileName);
+        $query .= ",`image`='" . $databaseValue . "'";
+        $fetch_image = $db_handle->runQuery("select image from extracurricular WHERE eid={$id}");
+        $img = explode(',', $fetch_image[0]['image']);
+        foreach ($img as $i) {
+            unlink($i);
         }
     }
 
-    $data = $db_handle->insertQuery("UPDATE `extracurricular` SET `image_caption`='$caption',`page`='$page',`updated_at`='$updated_at'" . $query . " WHERE `eid` = '$id'");
-    if ($data){
-        echo "
-        <script>
+    // Update the database with the new information
+    $updated_at = date('Y-m-d H:i:s');
+    $data = $db_handle->insertQuery("UPDATE `extracurricular` SET `image_caption`='$caption',`updated_at`='$updated_at',`description`='$description'" . $query . " WHERE `eid`='$id'");
+    if ($data) {
+        echo "<script>
             document.cookie = 'alert = 3';
             window.location.href='Extracurricular';
 </script>";

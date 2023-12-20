@@ -65,63 +65,6 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                     </div>
                 </div>
                 <!-- end page title -->
-                <div class="row">
-                    <div class="col-3 mb-3">
-                        <div class="card-body">
-                            <div>
-                                <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#myModal">যুক্ত করুন</button>
-
-                                <!-- sample modal content -->
-                                <div id="myModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" data-bs-scroll="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="myModalLabel">যুক্ত করুন</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form action="Insert" method="post" enctype="multipart/form-data">
-                                                    <div class="mb-3">
-                                                        <label for="example-text-input" class="form-label">ছবি</label>
-                                                        <input class="form-control" type="file" id="example-text-input"
-                                                               name="image" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="example-text-input" class="form-label">ছবির ক্যাপশান</label>
-                                                        <input class="form-control" type="text" id="example-text-input"
-                                                               name="caption" required>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">পেজ নির্বাচন করুন</label>
-                                                        <select class="form-select" name="page">
-                                                            <option value="0">নির্বাচন করুন</option>
-                                                            <option value="1">ক্রীড়া কার্যক্রম</option>
-                                                            <option value="2">সাংস্কৃতিক কার্যক্রম</option>
-                                                            <option value="3">স্কাউটস</option>
-                                                            <option value="4">রেড ক্রিসেন্ট</option>
-                                                            <option value="5">শিক্ষা সফর</option>
-                                                            <option value="6">স্টুডেন্ট ক্যাবিনেট</option>
-                                                            <option value="7">ডিবেটিং ক্লাব</option>
-                                                            <option value="8">ল্যাংগুয়েজ ক্লাব</option>
-                                                            <option value="9">বিজ্ঞান মেলা</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="text-center mt-4">
-                                                        <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">বাতিন করুন</button>
-                                                        <button type="submit" class="btn btn-primary waves-effect waves-light"
-                                                                name="insert_extracurriculam">সংরক্ষন করুন
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div><!-- /.modal-content -->
-                                    </div><!-- /.modal-dialog -->
-                                </div><!-- /.modal -->
-                            </div> <!-- end preview-->
-
-                        </div>
-                    </div>
-                </div>
 
                 <div class="row">
                     <div class="col-12">
@@ -145,7 +88,8 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                         ?>
                                         <tr>
                                             <td><?php echo $i+1;?></td>
-                                            <td><img src="<?php echo $fetch_staff[$i]['image'];?>" height="50px"></td>
+                                            <td><img src="<?php $img = explode("," ,$fetch_staff[$i]['image']);
+                                            echo $img['0'];?>" height="50px"></td>
                                             <td><?php
                                                 if($fetch_staff[$i]['page'] == 1)
                                                     echo 'ক্রীড়া কার্যক্রম';

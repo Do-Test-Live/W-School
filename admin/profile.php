@@ -12,7 +12,7 @@ if(!isset($_SESSION['admin_id'])){
     ";
 }
 $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_SESSION['admin_id']}");
-$teacher_info = $db_handle->runQuery("select * from teacher_info where teacher_info_id = {$_SESSION['admin_id']}");
+$teacher_info = $db_handle->runQuery("select * from teacher_info where admin_id = {$_SESSION['admin_id']}");
 ?>
 <!doctype html>
 <html lang="en">

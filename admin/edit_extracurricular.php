@@ -72,16 +72,22 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                         <div class="mb-3">
                                             <label for="example-text-input" class="form-label">ছবি</label>
                                             <input class="form-control" type="file" id="example-text-input"
-                                                   name="image">
+                                                   name="image[]" multiple>
                                         </div>
                                         <div class="mb-3">
                                             <?php
                                             $fetch = $db_handle->runQuery("select * from extracurricular where eid = {$_GET['id']}");
+                                            $img = explode(",", $fetch[0]['image']);
+                                            foreach ($img as $i) {
+                                                ?>
+                                                <img src="<?php echo $i;?>" style="max-width: 350px; height: auto;"/>
+                                                <?php
+                                            }
+
                                             ?>
-                                            <img src="<?php echo $fetch[0]['image']; ?>"
-                                                 style="max-width: 350px; height: auto;"/>
                                         </div>
                                         <input type="hidden" value="<?php echo $fetch[0]['eid'];?>" name="id"/>
+
                                         <div class="mb-3">
                                             <label for="example-text-input" class="form-label">ছবির ক্যাপশান</label>
                                             <input class="form-control" type="text" id="example-text-input"
@@ -89,40 +95,9 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                         </div>
 
                                         <div class="mb-3">
-                                            <label class="form-label">পেজ নির্বাচন করুন</label>
-                                            <select class="form-select" name="page">
-                                                <option value="<?php echo $fetch[0]['page'];?>" selected name="page">
-                                                    <?php
-                                                    if($fetch[0]['page'] == 1)
-                                                        echo 'ক্রীড়া কার্যক্রম';
-                                                    if($fetch[0]['page'] == 2)
-                                                        echo 'সাংস্কৃতিক কার্যক্রম';
-                                                    if($fetch[0]['page'] == 3)
-                                                        echo 'স্কাউটস';
-                                                    if($fetch[0]['page'] == 4)
-                                                        echo 'রেড ক্রিসেন্ট';
-                                                    if($fetch[0]['page'] == 5)
-                                                        echo 'শিক্ষা সফর';
-                                                    if($fetch[0]['page'] == 6)
-                                                        echo 'স্টুডেন্ট ক্যাবিনেট';
-                                                    if($fetch[0]['page'] == 7)
-                                                        echo 'ডিবেটিং ক্লাব';
-                                                    if($fetch[0]['page'] == 8)
-                                                        echo 'ল্যাংগুয়েজ ক্লাব';
-                                                    if($fetch[0]['page'] == 9)
-                                                        echo 'বিজ্ঞান মেলা';
-                                                    ?>
-                                                </option>
-                                                <option value="1">ক্রীড়া কার্যক্রম</option>
-                                                <option value="2">সাংস্কৃতিক কার্যক্রম</option>
-                                                <option value="3">স্কাউটস</option>
-                                                <option value="4">রেড ক্রিসেন্ট</option>
-                                                <option value="5">শিক্ষা সফর</option>
-                                                <option value="6">স্টুডেন্ট ক্যাবিনেট</option>
-                                                <option value="7">ডিবেটিং ক্লাব</option>
-                                                <option value="8">ল্যাংগুয়েজ ক্লাব</option>
-                                                <option value="9">বিজ্ঞান মেলা</option>
-                                            </select>
+                                            <label for="example-text-input" class="form-label">বর্ননা</label>
+                                            <textarea class="form-control"
+                                                      name="description"><?php echo $fetch[0]['description']; ?></textarea>
                                         </div>
 
                                         <div class="text-center mt-4">
@@ -159,6 +134,10 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
 
 <!-- JAVASCRIPT -->
 <?php include ('include/js.php');?>
+
+<script>
+    CKEDITOR.replace('description');
+</script>
 
 </body>
 

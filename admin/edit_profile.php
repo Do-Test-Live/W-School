@@ -73,16 +73,21 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                             </div>
                             <div class="card-body">
                                 <div>
-                                    <form action="Update" class="dropzone dz-clickable" id="profileImage" method="post" enctype="multipart/form-data">
-                                        <div class="dz-message needsclick">
-                                            <div class="mb-3">
-                                                <i class="display-4 text-muted bx bx-cloud-upload"></i>
-                                            </div>
-                                            <h5>Drop files here or click to upload.</h5>
-                                            <input type="file" name="profile_image" style="display: none;" />
+                                    <form action="Update" method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="example-text-input" class="form-label">ছবি</label>
+                                            <input class="form-control" type="file" id="example-text-input"
+                                                   name="image">
+                                        </div>
+                                        <div class="mb-3">
+                                            <?php
+                                            $fetch = $db_handle->runQuery("select * from admin where admin_id = {$_GET['id']}");
+                                            ?>
+                                            <img src="<?php echo $fetch[0]['profile_image']; ?>"
+                                                 style="max-width: 350px; height: auto;"/>
                                         </div>
                                         <div class="text-center mt-4">
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_profile_image">Save Files</button>
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_profile_image">সংরক্ষন করুন</button>
                                         </div>
                                     </form>
                                 </div>
@@ -101,8 +106,8 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                             <div class="card-body">
                                 <div>
                                     <?php
-                                    $fetch = $db_handle->runQuery("select * from teacher_info where teacher_info_id = {$_SESSION['admin_id']}");
-                                    $no_fetch = $db_handle->numRows("select * from teacher_info where teacher_info_id = {$_SESSION['admin_id']}");
+                                    $fetch = $db_handle->runQuery("select * from teacher_info where admin_id = {$_SESSION['admin_id']}");
+                                    $no_fetch = $db_handle->numRows("select * from teacher_info where admin_id = {$_SESSION['admin_id']}");
                                     ?>
                                     <form action="Update" method="post">
                                         <div class="mb-3">

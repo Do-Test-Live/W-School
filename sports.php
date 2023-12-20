@@ -58,15 +58,21 @@ $id = $_GET['id'];
 </section>
 <section class="mt-5 mb-5">
     <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p><?php
+                    $fetch = $db_handle->runQuery("select * from extracurricular where eid='$id' order by eid desc");
+                    echo $fetch[0]['description'];?></p>
+            </div>
+        </div>
         <div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: fade">
             <?php
-            $fetch = $db_handle->runQuery("select * from extracurricular where eid='1' order by eid desc");
-            $no = $db_handle->numRows("select * from extracurricular where eid='1' order by eid desc");
-            for ($i=0; $i<$no; $i++){
+            $img = explode("," , $fetch[0]['image']);
+            foreach ($img as $image){
                 ?>
                 <div>
-                    <a class="uk-inline" href="admin/<?php echo $fetch[$i]['image'];?>" data-caption="<?php echo $fetch[$i]['image_caption'];?>">
-                        <img src="admin/<?php echo $fetch[$i]['image'];?>" width="1800" height="1200" alt="">
+                    <a class="uk-inline" href="admin/<?php echo $image;?>" data-caption="<?php echo $fetch[0]['image_caption'];?>">
+                        <img src="admin/<?php echo $image;?>" width="1800" height="1200" alt="">
                     </a>
                 </div>
                 <?php
