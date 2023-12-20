@@ -1,3 +1,11 @@
+<?php
+session_start();
+require_once("admin/config/dbController.php");
+$db_handle = new DBController();
+date_default_timezone_set("Asia/Dhaka");
+
+$id = $_GET['id'];
+?>
 <!doctype html>
 <html lang="en">
 <head>

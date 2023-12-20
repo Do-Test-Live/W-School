@@ -91,8 +91,8 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=1">ক্রীড়া কার্যক্রম</a></li>
-                                <li><a class="dropdown-item" href="Extraxuricullam?id=2">সাংস্কৃতিক কার্যক্রম</a></li>
-                                <li><a class="dropdown-item" href="Extraxuricullam?id=3">স্কাউটস</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=3">সাংস্কৃতিক কার্যক্রম</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=2">স্কাউটস</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=4">রেড ক্রিসেন্ট</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=5">শিক্ষা সফর</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=6">স্টুডেন্ট ক্যাবিনেট</a></li>
@@ -107,11 +107,15 @@
                                 ভর্তি সংক্রান্ত তথ্য
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">প্রস্পেক্টাস</a></li>
-                                <li><a class="dropdown-item" href="#">ভর্তির নিয়ামাবলি</a></li>
-                                <li><a class="dropdown-item" href="#">ভর্তি পরিক্ষার সিলেবাস</a></li>
+                                <?php
+                                $prospectus = $db_handle->runQuery("select filelink from admission_info where id = '1'");
+                                $admission_rules = $db_handle->runQuery("select filelink from admission_info where id = '2'");
+                                $syllabus = $db_handle->runQuery("select filelink from admission_info where id = '3'");
+                                ?>
+                                <li><a class="dropdown-item" href="admin/<?php echo $prospectus[0]['filelink'];?>" target="_blank">প্রস্পেক্টাস</a></li>
+                                <li><a class="dropdown-item" href="admin/<?php echo $admission_rules[0]['filelink'];?>" target="_blank">ভর্তির নিয়ামাবলি</a></li>
+                                <li><a class="dropdown-item" href="admin/<?php echo $syllabus[0]['filelink'];?>" target="_blank">ভর্তি পরিক্ষার সিলেবাস</a></li>
                                 <li><a class="dropdown-item" href="#">ভর্তি পরিক্ষার ফলাফল</a></li>
-                                <li><a class="dropdown-item" href="#"></a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
