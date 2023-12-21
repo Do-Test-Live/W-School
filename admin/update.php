@@ -574,3 +574,40 @@ if(isset($_POST['update_admission_syllabus'])){
 </script>";
     }
 }
+
+if(isset($_POST['update_event'])){
+    $id = $db_handle->checkValue($_POST['id']);
+    $name = $db_handle->checkValue($_POST['name']);
+    $start_date = $db_handle->checkValue($_POST['start_date']);
+    $start_time = $db_handle->checkValue($_POST['start_time']);
+    $end_date = $db_handle->checkValue($_POST['end_date']);
+    $end_time = $db_handle->checkValue($_POST['end_time']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `event` WHERE event_id = '$id'");
+            unlink($data[0]['image']);
+            move_uploaded_file($file_tmp, "assets/img/events/" . $file_name);
+            $image = "assets/img/events/" . $file_name;
+            $query .= ",`image`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("UPDATE `event` SET `event_name`='$name',`start_date`='$start_date',`start_time`='$start_time',`end_date`='$end_date',`end_time`='$end_time',`updated_at`='$updated_at'" . $query . " where event_id ='$id'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Events';
+</script>";
+    }
+}

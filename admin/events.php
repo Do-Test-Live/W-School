@@ -147,22 +147,38 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                     </thead>
                                     <tbody>
                                     <?php
-                                    $fetch_governing_body = $db_handle->runQuery("select * from governing_body");
-                                    $no = $db_handle->numRows("select * from governing_body");
+                                    $fetch = $db_handle->runQuery("select * from event order by event_id desc");
+                                    $no = $db_handle->numRows("select * from event order by event_id desc");
                                     for ($i=0; $i<$no; $i++){
                                         ?>
                                         <tr>
                                             <td><?php echo $i+1;?></td>
-                                            <td><?php echo $fetch_governing_body[$i]['name'];?></td>
-                                            <td><img src="<?php echo $fetch_governing_body[$i]['image'];?>" height="50px"> </td>
-                                            <td><?php echo $fetch_governing_body[$i]['position'];?></td>
-                                            <td><?php echo $fetch_governing_body[$i]['contact_no'];?></td>
-                                            <td><?php echo $fetch_governing_body[$i]['email'];?></td>
+                                            <td><?php echo $fetch[$i]['event_name'];?></td>
+                                            <td><img src="<?php echo $fetch[$i]['image'];?>" height="50px"> </td>
                                             <td><?php
-                                                $joinDateStr = $fetch_governing_body[$i]['join_date'];
-                                                $joinDate = new DateTime($joinDateStr);
-                                                echo $formattedDate = date_format($joinDate, 'd M, Y');?></td>
-                                            <td><a href="Edit_Governing_body?id=<?php echo $fetch_governing_body[$i]['governing_body_id'];?>"><i data-feather="pen-tool"></i></a></td>
+                                                $startDateStr = $fetch[$i]['start_date'];
+                                                $startDate = new DateTime($startDateStr);
+                                                echo $formattedDate = date_format($startDate, 'd M, Y');
+                                                ?></td>
+                                            <td><?php
+                                                $startTimeStr = $fetch[$i]['start_time'];
+                                                $startTime = new DateTime($startTimeStr);
+                                                echo $formattedTime = date_format($startTime, 'h:i A');
+                                                ?></td>
+                                            <td><?php
+                                                $endDateStr = $fetch[$i]['end_date'];
+                                                $endDate = new DateTime($endDateStr);
+                                                echo $formattedDate = date_format($endDate, 'd M, Y');
+                                                ?></td>
+                                            <td><?php
+                                                $endTimeStr = $fetch[$i]['end_time'];
+                                                $endTime = new DateTime($endTimeStr);
+                                                echo $formattedTime = date_format($endTime, 'h:i A');
+                                                ?></td>
+                                            <td>
+                                                <a href="Edit_Event?id=<?php echo $fetch[$i]['event_id'];?>"><i data-feather="pen-tool"></i></a>
+                                                <a href="Delete?eventID=<?php echo $fetch[$i]['event_id'];?>"><i data-feather="trash"></i></a>
+                                            </td>
                                         </tr>
                                         <?php
                                     }
@@ -197,6 +213,8 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
 
 <!-- JAVASCRIPT -->
 <?php include ('include/js.php');?>
+
+
 
 </body>
 
