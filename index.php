@@ -3,8 +3,6 @@ session_start();
 require_once("admin/config/dbController.php");
 $db_handle = new DBController();
 date_default_timezone_set("Asia/Dhaka");
-
-$id = $_GET['id'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -480,27 +478,57 @@ $id = $_GET['id'];
                 <div class="uk-slider-container-offset" uk-slider>
                     <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
                         <ul class="uk-slider-items uk-child-width-1-4@s uk-grid">
-                            <li>
-                                <div class="uk-card uk-card-default">
-                                    <div class="uk-card-media-top">
-                                        <img src="assets/images/event/1.jpg" alt="">
-                                    </div>
-                                    <div class="uk-card-body">
-                                        <h3 class="uk-card-title">RYRC এর RCRC Basic & First Aid প্রশিক্ষন</h3>
-                                        <div class="row border mt-3">
-                                            <div class="col-6 border-end text-center pt-3">
-                                                <p>Start: 11:00 am</p>
+                            <?php
+                            $fetch = $db_handle->runQuery("select * from event order by event_id desc");
+                            $no = $db_handle->numRows("select * from event order by event_id desc");
+                            for ($i=0; $i < $no; $i++){
+                                ?>
+                                <li>
+                                    <div class="uk-card uk-card-default">
+                                        <div class="uk-card-media-top">
+                                            <img src="admin/<?php echo $fetch[$i]['image'];?>" alt="">
+                                        </div>
+                                        <div class="uk-card-body">
+                                            <h3 class="uk-card-title"><?php echo $fetch[$i]['event_name'];?></h3>
+                                            <div class="row border mt-3">
+                                                <div class="col-6 border-end text-center pt-3">
+                                                    <p><?php
+                                                        $startDateStr = $fetch[$i]['start_date'];
+                                                        $startDate = new DateTime($startDateStr);
+                                                        echo $formattedDate = date_format($startDate, 'd M, Y');
+                                                        ?></p>
+                                                </div>
+                                                <div class="col-6 text-center pt-3">
+                                                    <p><?php
+                                                        $startTimeStr = $fetch[$i]['start_time'];
+                                                        $startTime = new DateTime($startTimeStr);
+                                                        echo $formattedTime = date_format($startTime, 'h:i A');
+                                                        ?></p>
+                                                </div>
                                             </div>
-                                            <div class="col-6 text-center pt-3">
-                                                <p>End: 11:00 am</p>
+                                            <div class="row border mt-3">
+                                                <div class="col-6 border-end text-center pt-3">
+                                                    <p><?php
+                                                        $endDateStr = $fetch[$i]['end_date'];
+                                                        $endDate = new DateTime($endDateStr);
+                                                        echo $formattedDate = date_format($endDate, 'd M, Y');
+                                                        ?></p>
+                                                </div>
+                                                <div class="col-6 text-center pt-3">
+                                                    <p><?php
+                                                        $endTimeStr = $fetch[$i]['end_time'];
+                                                        $endTime = new DateTime($endTimeStr);
+                                                        echo $formattedTime = date_format($endTime, 'h:i A');
+                                                        ?></p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="text-end mt-3">
-                                            <a class="btn details-button" href="#">View</a>
-                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                                <?php
+                            }
+                            ?>
+
                         </ul>
                         <a class="uk-position-center-left uk-position-small uk-hidden-hover" href
                            uk-slidenav-previous
@@ -519,52 +547,84 @@ $id = $_GET['id'];
     <div class="container-fluid">
         <div class="row gallery">
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/1.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/2.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/3.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/4.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/5.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/6.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/7.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/8.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/9.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/10.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/11.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
             <div class="col-12 col-lg-3 col-md-3">
-                <img src="https://images.unsplash.com/photo-1558981033-0f0309284409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                     alt="bike">
+                <img src="assets/images/slider/12.jpg" class="img-fluid"
+                     alt="gallery">
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <img src="assets/images/slider/13.jpg" class="img-fluid"
+                     alt="gallery">
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <img src="assets/images/slider/14.jpg" class="img-fluid"
+                     alt="gallery">
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <img src="assets/images/slider/15.jpg" class="img-fluid"
+                     alt="gallery">
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <img src="assets/images/slider/16.jpg" class="img-fluid"
+                     alt="gallery">
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <img src="assets/images/slider/17.jpg" class="img-fluid"
+                     alt="gallery">
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <img src="assets/images/slider/18.jpg" class="img-fluid"
+                     alt="gallery">
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <img src="assets/images/slider/19.jpg" class="img-fluid"
+                     alt="gallery">
+            </div>
+            <div class="col-12 col-lg-3 col-md-3">
+                <img src="assets/images/slider/20.jpg" class="img-fluid"
+                     alt="gallery">
             </div>
         </div>
     </div>

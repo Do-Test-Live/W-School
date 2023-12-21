@@ -119,6 +119,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="Events">
+                            <i data-feather="calendar"></i>
+                            <span data-key="t-dashboard">অনুষ্ঠান সূচী</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="Activity">
                             <i data-feather="activity"></i>
                             <span data-key="t-dashboard">এ্যাকটিভিটি লগ</span>

@@ -199,3 +199,36 @@ if(isset($_POST['insert_extracurriculam'])){
         </script>";
     }
 }
+
+if (isset($_POST['insert_event_data'])){
+    $name = $db_handle->checkValue($_POST['name']);
+    $start_date = $db_handle->checkValue($_POST['start_date']);
+    $start_time = $db_handle->checkValue($_POST['start_time']);
+    $end_date = $db_handle->checkValue($_POST['end_date']);
+    $end_time = $db_handle->checkValue($_POST['end_time']);
+    $image = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            move_uploaded_file($file_tmp, "assets/img/events/" . $file_name);
+            $image = "assets/img/events/" . $file_name;
+        }
+    }
+
+    $data = $db_handle->insertQuery("INSERT INTO `event`(`event_name`, `image`, `start_date`, `start_time`, `end_date`, `end_time`, `inserted_at`) 
+VALUES ('$name','$image','$start_date','$start_time','$end_date','$end_time','$inserted_at')");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Events';s
+</script>";
+    }
+}
