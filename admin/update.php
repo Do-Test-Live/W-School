@@ -611,3 +611,39 @@ if(isset($_POST['update_event'])){
 </script>";
     }
 }
+
+
+if(isset($_POST['update_notice'])){
+    $id = $db_handle->checkValue($_POST['id']);
+    $name = $db_handle->checkValue($_POST['name']);
+    $issue_date = $db_handle->checkValue($_POST['issue_date']);
+    $category = $db_handle->checkValue($_POST['category']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "pdf") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `notice_board` WHERE notice_id = '$id'");
+            unlink($data[0]['image']);
+            move_uploaded_file($file_tmp, "assets/img/notice/" . $file_name);
+            $image = "assets/img/notice/" . $file_name;
+            $query .= ",`file`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("UPDATE `notice_board` SET `notice_type`='$category',`title`='$name',`issue_date`='$issue_date',`updated_at`='$updated_at'" . $query . " where notice_id ='$id'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Notice';
+</script>";
+    }
+}

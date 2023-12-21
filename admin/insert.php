@@ -232,3 +232,32 @@ VALUES ('$name','$image','$start_date','$start_time','$end_date','$end_time','$i
 </script>";
     }
 }
+
+if(isset($_POST['insert_notice'])){
+    $name = $db_handle->checkValue($_POST['name']);
+    $issue_date = $db_handle->checkValue($_POST['issue_date']);
+    $category = $db_handle->checkValue($_POST['category']);
+    $image = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "pdf") {
+            $image = '';
+        } else {
+            move_uploaded_file($file_tmp, "assets/img/notice/" . $file_name);
+            $image = "assets/img/notice/" . $file_name;
+        }
+    }
+    $data = $db_handle->insertQuery("INSERT INTO `notice_board`(`notice_type`, `title`, `issue_date`, `file`, `inserted_at`) VALUES ('$category','$name','$issue_date','$image','$inserted_at')");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Notice';
+</script>";
+    }
+}

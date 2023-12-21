@@ -125,6 +125,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="Notice">
+                            <i data-feather="alert-circle"></i>
+                            <span data-key="t-dashboard">নোটিশ</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="Activity">
                             <i data-feather="activity"></i>
                             <span data-key="t-dashboard">এ্যাকটিভিটি লগ</span>

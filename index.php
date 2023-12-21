@@ -149,110 +149,34 @@ date_default_timezone_set("Asia/Dhaka");
                             <h3 class="text-center text-white">Administrative Notice</h3>
                         </div>
                     </div>
-                    <div class="col-12 ad-notice">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-10-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    কলেজ ক্যাম্পাসে ছাত্রদের
-                                    মোবাইল ব্যবহার প্রসঙ্গে-২০২৩<br/><br/>
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
+                    <?php
+                    $fetch_notice = $db_handle->runQuery("select * from notice_board where notice_type = 'Administrative Notice' order by notice_id desc");
+                    $no = $db_handle->numRows("select * from notice_board where notice_type = 'Administrative Notice' order by notice_id desc");
+                    for ($i = 0; $i < $no; $i++){
+                        ?>
+                        <div class="col-12 ad-notice">
+                            <div class="card">
+                                <div class="card-body">
+                                    <button class="btn btn-outline-secondary position-absolute">
+                                        <?php
+                                        $joinDateStr = $fetch_notice[$i]['issue_date'];
+                                        $joinDate = new DateTime($joinDateStr);
+                                        echo $formattedDate = date_format($joinDate, 'd M, Y');?>
+                                    </button>
+                                    <p class="card-text mt-5">
+                                        <?php echo $fetch_notice[$i]['title'];?>
+                                    </p>
+                                    <div class="text-end">
+                                        <a href="admin/<?php echo $fetch_notice[$i]['file'];?>" target="_blank" class="marquee-slider">
+                                            আরো পড়ুন
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 ad-notice">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    ২০২৪ শিক্ষাবর্ষে নবম
-                                    শ্রেণিতে ছাত্র ভর্তি বিজ্ঞপ্তি
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 ad-notice">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    জরুরি নোটিশ ( ছাত্রদের অভিনীত নাটক ‘ডাকঘর’ মঞ্চায়ন প্রসঙ্গে)
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 ad-notice">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    Test 1
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 ad-notice">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    Test 2
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 ad-notice">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    Test 3
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <?php
+                    }
+                    ?>
                     <div class="col-12">
                         <div class="notice-header pt-3 pb-3 text-end pe-2">
                             <button class="btn btn-light" id="prevBtn"><i class="fa-solid fa-chevron-up"></i></button>
@@ -268,59 +192,34 @@ date_default_timezone_set("Asia/Dhaka");
                             <h3 class="text-center text-white">Academic Notice</h3>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    একাদশ শ্রেণির ভর্তি ও
-                                    প্রয়োজনীয় কাগজপত্র সংক্রান্ত নোটিশ
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
+                    <?php
+                    $fetch_notice = $db_handle->runQuery("select * from notice_board where notice_type = 'Academic Notice' order by notice_id desc");
+                    $no = $db_handle->numRows("select * from notice_board where notice_type = 'Academic Notice' order by notice_id desc");
+                    for ($i = 0; $i < $no; $i++){
+                        ?>
+                        <div class="col-12 ad-notice">
+                            <div class="card">
+                                <div class="card-body">
+                                    <button class="btn btn-outline-secondary position-absolute">
+                                        <?php
+                                        $joinDateStr = $fetch_notice[$i]['issue_date'];
+                                        $joinDate = new DateTime($joinDateStr);
+                                        echo $formattedDate = date_format($joinDate, 'd M, Y');?>
+                                    </button>
+                                    <p class="card-text mt-5">
+                                        <?php echo $fetch_notice[$i]['title'];?>
+                                    </p>
+                                    <div class="text-end">
+                                        <a href="admin/<?php echo $fetch_notice[$i]['file'];?>" target="_blank" class="marquee-slider">
+                                            আরো পড়ুন
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    জনাব মোঃ ওসমান আলী এর অনাপত্তি সনদপত্র (NOC)
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    ঢাকা রেসিডেনসিয়াল মডেল কলেজে কর্মরত মো: মুরাদুজ্জামান আকন্দ
-                                    এর পাসপোর্ট করার জন্য অনাপত্তি সনদ( NOC) প্রদান প্রসঙ্গে।
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <?php
+                    }
+                    ?>
                     <div class="col-12">
                         <div class="notice-header pt-3 pb-3 text-end pe-2">
                             <button class="btn btn-light"><i class="fa-solid fa-chevron-up"></i></button>
@@ -336,60 +235,34 @@ date_default_timezone_set("Asia/Dhaka");
                             <h3 class="text-center text-white">Examination/Result</h3>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    শিক্ষকদের জন্য ছয়তলা ভিত
-                                    বিশিষ্ঠ আবাসিক ভবনের দরপত্র উন্মুক্তকরণ প্রসঙ্গে
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
+                    <?php
+                    $fetch_notice = $db_handle->runQuery("select * from notice_board where notice_type = 'Examination/Result' order by notice_id desc");
+                    $no = $db_handle->numRows("select * from notice_board where notice_type = 'Examination/Result' order by notice_id desc");
+                    for ($i = 0; $i < $no; $i++){
+                        ?>
+                        <div class="col-12 ad-notice">
+                            <div class="card">
+                                <div class="card-body">
+                                    <button class="btn btn-outline-secondary position-absolute">
+                                        <?php
+                                        $joinDateStr = $fetch_notice[$i]['issue_date'];
+                                        $joinDate = new DateTime($joinDateStr);
+                                        echo $formattedDate = date_format($joinDate, 'd M, Y');?>
+                                    </button>
+                                    <p class="card-text mt-5">
+                                        <?php echo $fetch_notice[$i]['title'];?>
+                                    </p>
+                                    <div class="text-end">
+                                        <a href="admin/<?php echo $fetch_notice[$i]['file'];?>" target="_blank" class="marquee-slider">
+                                            আরো পড়ুন
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    অধ্যক্ষ মহোদয়ের সাথে শিক্ষক-কর্মকর্তা-কর্মচারী ও অন্যান্য সংশ্লিষ্ঠ
-                                    ব্যক্তিবর্গের সাক্ষাৎকারের সময়সূচি-২০২৩
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    ২০২৩-২০২৪ শিক্ষাবর্ষে একাদশ
-                                    শ্রেণিতে ভর্তির বিজ্ঞপ্তি
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <?php
+                    }
+                    ?>
                     <div class="col-12">
                         <div class="notice-header pt-3 pb-3 text-end pe-2">
                             <button class="btn btn-light"><i class="fa-solid fa-chevron-up"></i></button>
@@ -405,60 +278,34 @@ date_default_timezone_set("Asia/Dhaka");
                             <h3 class="text-center text-white">Tuition Fees Notice</h3>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    শিক্ষকদের আবাসিক ভবনের
-                                    দরপত্র উন্মুক্তকরণের তারিখ স্থগিত প্রসঙ্গে
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
+                    <?php
+                    $fetch_notice = $db_handle->runQuery("select * from notice_board where notice_type = 'Tuition Fees Notice' order by notice_id desc");
+                    $no = $db_handle->numRows("select * from notice_board where notice_type = 'Tuition Fees Notice' order by notice_id desc");
+                    for ($i = 0; $i < $no; $i++){
+                        ?>
+                        <div class="col-12 ad-notice">
+                            <div class="card">
+                                <div class="card-body">
+                                    <button class="btn btn-outline-secondary position-absolute">
+                                        <?php
+                                        $joinDateStr = $fetch_notice[$i]['issue_date'];
+                                        $joinDate = new DateTime($joinDateStr);
+                                        echo $formattedDate = date_format($joinDate, 'd M, Y');?>
+                                    </button>
+                                    <p class="card-text mt-5">
+                                        <?php echo $fetch_notice[$i]['title'];?>
+                                    </p>
+                                    <div class="text-end">
+                                        <a href="admin/<?php echo $fetch_notice[$i]['file'];?>" target="_blank" class="marquee-slider">
+                                            আরো পড়ুন
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    গাড়ী পার্কিং অনুমোদন
-                                    প্রাপ্তের তালিকা ও পার্কিং স্থান
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <button class="btn btn-outline-secondary position-absolute">
-                                    10-12-2023
-                                </button>
-                                <p class="card-text mt-5">
-                                    দরপত্র বিজ্ঞপ্তি (
-                                    শিক্ষকদের জন্য ৬তলা আবাসিক ভবন নির্মাণ )
-                                </p>
-                                <div class="text-end">
-                                    <a href="#" class="marquee-slider">
-                                        আরো পড়ুন
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <?php
+                    }
+                    ?>
                     <div class="col-12">
                         <div class="notice-header pt-3 pb-3 text-end pe-2">
                             <button class="btn btn-light"><i class="fa-solid fa-chevron-up"></i></button>

@@ -31,6 +31,8 @@ RewriteRule ^Edit_Extracurricular edit_extracurricular.php [NE,L]
 RewriteRule ^Admission admission.php [NE,L]
 RewriteRule ^Events events.php [NE,L]
 RewriteRule ^Edit_Event edit_events.php [NE,L]
+RewriteRule ^Notice notice.php [NE,L]
+RewriteRule ^Edit_Notice edit_notice.php [NE,L]
 
 
 
