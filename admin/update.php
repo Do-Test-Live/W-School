@@ -681,3 +681,137 @@ if(isset($_POST['update_noc'])){
 </script>";
     }
 }
+
+if(isset($_POST['update_behaviour'])){
+    $description = $db_handle->checkValue($_POST['description']);
+    $data = $db_handle->insertQuery("update academy set description = '$description' where academy_id = '1'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Academy';
+</script>";
+    }
+}
+
+if(isset($_POST['update_calender'])){
+    $description = $db_handle->checkValue($_POST['description_calender']);
+    $data = $db_handle->insertQuery("update academy set description = '$description' where academy_id = '2'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Academy';
+</script>";
+    }
+}
+
+if(isset($_POST['update_routine'])){
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "pdf") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `academy` WHERE academy_id = '3'");
+            unlink($data[0]['file']);
+            move_uploaded_file($file_tmp, "assets/img/academy/" . $file_name);
+            $image = "assets/img/academy/" . $file_name;
+            $query .= "`file`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("UPDATE `academy` SET " . $query . " where academy_id ='3'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Academy';
+</script>";
+    }
+}
+
+if(isset($_POST['update_holiday'])){
+    $description = $db_handle->checkValue($_POST['description_holiday']);
+    $data = $db_handle->insertQuery("update academy set description = '$description' where academy_id = '4'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Academy';
+</script>";
+    }
+}
+
+if(isset($_POST['update_uniform'])){
+    $description = $db_handle->checkValue($_POST['description_unifrom']);
+    $data = $db_handle->insertQuery("update academy set description = '$description' where academy_id = '5'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Academy';
+</script>";
+    }
+}
+
+if(isset($_POST['update_fees'])){
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "pdf") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `academy` WHERE academy_id = '6'");
+            unlink($data[0]['file']);
+            move_uploaded_file($file_tmp, "assets/img/academy/" . $file_name);
+            $image = "assets/img/academy/" . $file_name;
+            $query .= "`file`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("UPDATE `academy` SET " . $query . " where academy_id ='6'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Academy';
+</script>";
+    }
+}
+
+if(isset($_POST['update_parents'])){
+    $description = $db_handle->checkValue($_POST['description_parents']);
+    $data = $db_handle->insertQuery("update academy set description = '$description' where academy_id = '7'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Academy';
+</script>";
+    }
+}
+
+if(isset($_POST['update_attendance'])){
+    $description = $db_handle->checkValue($_POST['description_attendance']);
+    $data = $db_handle->insertQuery("update academy set description = '$description' where academy_id = '8'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Academy';
+</script>";
+    }
+}

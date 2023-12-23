@@ -119,6 +119,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="Academy">
+                            <i data-feather="briefcase"></i>
+                            <span data-key="t-dashboard">একাডেমিক তথ্য</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="Complains">
                             <i data-feather="alert-triangle"></i>
                             <span data-key="t-dashboard">অভিযোগ</span>
