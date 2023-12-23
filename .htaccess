@@ -31,3 +31,5 @@ RewriteRule ^Complain complain.php [NE,L]
 RewriteRule ^Extraxuricullam sports.php [NE,L]
 
 RewriteRule ^Chairman_Introduction introduction_chairman.php [NE,L]
+
+RewriteRule ^NOC noc.php [NE,L]

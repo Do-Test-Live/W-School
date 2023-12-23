@@ -55,7 +55,7 @@
                                 <li><a class="dropdown-item" href="Board-Member">পরিচালনা পর্ষদ তথ্য</a></li>
                                 <li><a class="dropdown-item" href="Chairman_List">সভাপতির তালিকা</a></li>
                                 <li><a class="dropdown-item" href="Headmaster_List">প্রধান শিক্ষকের তালিকা</a></li>
-                                <li><a class="dropdown-item" href="#">NOC</a></li>
+                                <li><a class="dropdown-item" href="NOC">NOC</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

@@ -27,6 +27,11 @@ $fetch_institute_info = $db_handle->runQuery("select * from structure where id =
         <div class="uk-cover-container uk-height-medium">
             <img src="admin/<?php echo $fetch_institute_info[0]['image'];?>" alt="" uk-cover>
         </div>
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <h3 class="uk-text-bold">ভৌত অবকাঠামো</h3>
+            </div>
+        </div>
     </div>
 </section>
 <section>
