@@ -74,14 +74,20 @@
                                 একাডেমিক তথ্য
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">আচরণ বিধি</a></li>
-                                <li><a class="dropdown-item" href="#">একাডেমিক ক্যালেন্ডার</a></li>
-                                <li><a class="dropdown-item" href="#">ক্লাস রুটিন</a></li>
-                                <li><a class="dropdown-item" href="#">ছুটির তালিকা</a></li>
-                                <li><a class="dropdown-item" href="#">ইউনিফর্ম</a></li>
-                                <li><a class="dropdown-item" href="#">ফী সমূহ</a></li>
-                                <li><a class="dropdown-item" href="#">দৈনিক ডায়েরী</a></li>
-                                <li><a class="dropdown-item" href="#">শিক্ষার্থী উপস্থিতি তথ্য</a></li>
+                                <li><a class="dropdown-item" href="Academy?id=1">আচরণ বিধি</a></li>
+                                <li><a class="dropdown-item" href="Academy?id=2">একাডেমিক ক্যালেন্ডার</a></li>
+                                <?php
+                                $fetch_link = $db_handle->runQuery("select * from academy where academy_id = '3'");
+                                ?>
+                                <li><a class="dropdown-item" href="admin/<?php echo $fetch_link[0]['file'];?>" target="_blank">ক্লাস রুটিন</a></li>
+                                <li><a class="dropdown-item" href="Academy?id=4">ছুটির তালিকা</a></li>
+                                <li><a class="dropdown-item" href="Academy?id=5">ইউনিফর্ম</a></li>
+                                <?php
+                                $fetch_link2 = $db_handle->runQuery("select * from academy where academy_id = '6'");
+                                ?>
+                                <li><a class="dropdown-item" href="admin/<?php echo $fetch_link[0]['file'];?>" target="_blank">ফী সমূহ</a></li>
+                                <li><a class="dropdown-item" href="Academy?id=7">অভিভাবক নির্দেশিকা </a></li>
+                                <li><a class="dropdown-item" href="Academy?id=8">শিক্ষার্থী উপস্থিতি তথ্য</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -91,14 +97,10 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=1">ক্রীড়া কার্যক্রম</a></li>
-                                <li><a class="dropdown-item" href="Extraxuricullam?id=3">সাংস্কৃতিক কার্যক্রম</a></li>
-                                <li><a class="dropdown-item" href="Extraxuricullam?id=2">স্কাউটস</a></li>
-                                <li><a class="dropdown-item" href="Extraxuricullam?id=4">রেড ক্রিসেন্ট</a></li>
-                                <li><a class="dropdown-item" href="Extraxuricullam?id=5">শিক্ষা সফর</a></li>
-                                <li><a class="dropdown-item" href="Extraxuricullam?id=6">স্টুডেন্ট ক্যাবিনেট</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=3">সাংস্কৃতিক ক্লাব</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=7">ডিবেটিং ক্লাব</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=8">ল্যাংগুয়েজ ক্লাব</a></li>
-                                <li><a class="dropdown-item" href="Extraxuricullam?id=9">বিজ্ঞান মেলা</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=9">বিজ্ঞান ক্লাব</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
