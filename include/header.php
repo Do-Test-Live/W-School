@@ -96,7 +96,7 @@
                                 সহ পাঠ্যক্রম
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="Extraxuricullam?id=1">ক্রীড়া কার্যক্রম</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=2">ক্রীড়া কার্যক্রম</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=3">সাংস্কৃতিক ক্লাব</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=7">ডিবেটিং ক্লাব</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=8">ল্যাংগুয়েজ ক্লাব</a></li>
@@ -120,7 +120,7 @@
                                 <li><a class="dropdown-item" href="#">ভর্তি পরিক্ষার ফলাফল</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
+                        <!--<li class="nav-item dropdown">
                             <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
                                role="button">
                                 ফলাফল
@@ -130,7 +130,7 @@
                                 <li><a class="dropdown-item" href="#">পাবলিক পরিক্ষার ফলাফল</a></li>
                                 <li><a class="dropdown-item" href="#">বৃ্ত্তি পরিক্ষার ফলাফল</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a href="Complain" class="nav-link">অভিযোগ বাক্স</a>
                         </li>

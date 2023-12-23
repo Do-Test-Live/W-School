@@ -32,11 +32,11 @@ $id = $_GET['id'];
             <div class="col-12 text-center">
                 <h3 class="uk-text-bold mt-5">
                     <?php
-                    if($id == 1)
+                    if($id == 2)
                         echo 'ক্রীড়া কার্যক্রম';
                     if($id == 3)
                         echo 'সাংস্কৃতিক কার্যক্রম';
-                    if($id == 2)
+                    if($id == 1)
                         echo 'স্কাউটস';
                     if($id == 4)
                         echo 'রেড ক্রিসেন্ট';

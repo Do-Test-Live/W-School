@@ -82,8 +82,8 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                     </thead>
                                     <tbody>
                                     <?php
-                                    $fetch_staff = $db_handle->runQuery("select * from extracurricular order by eid desc");
-                                    $no = $db_handle->numRows("select * from extracurricular order by eid desc");
+                                    $fetch_staff = $db_handle->runQuery("select * from extracurricular where eid != '1' and eid != '4' and eid != '5' and eid != '6' order by eid desc");
+                                    $no = $db_handle->numRows("select * from extracurricular where eid != '1' and eid != '4' and eid != '5' and eid != '6' order by eid desc");
                                     for ($i=0; $i<$no; $i++){
                                         ?>
                                         <tr>
