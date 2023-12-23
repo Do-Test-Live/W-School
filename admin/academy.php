@@ -278,7 +278,7 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">শিক্ষার্থী উপস্থিতি তথ্য</h4>
+                                <h4 class="card-title">শিক্ষার্থী তথ্য</h4>
                             </div>
                             <div class="card-body">
                                 <div>

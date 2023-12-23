@@ -15,6 +15,11 @@ if(isset($_GET['id'])){
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>একাডেমিক তথ্য - খুলনা বিশ্ববিদ্যালয় স্কুল</title>
     <?php include ('include/css.php');?>
+    <style>
+        table, tr, td {
+            border: 2px solid black;
+        }
+    </style>
 </head>
 <body>
 
@@ -34,7 +39,7 @@ if(isset($_GET['id'])){
                     <?php
                     if($_GET['id'] == '1')
                         echo 'আচরণ বিধি';
-                    elseif($_GET['id'] == '1')
+                    elseif($_GET['id'] == '2')
                         echo 'একাডেমিক ক্যালেন্ডার';
                     elseif($_GET['id'] == '4')
                         echo 'ছুটির তালিকা';
@@ -43,7 +48,7 @@ if(isset($_GET['id'])){
                     elseif($_GET['id'] == '7')
                         echo 'অভিভাবক নির্দেশিকা';
                     elseif($_GET['id'] == '8')
-                        echo 'শিক্ষার্থী উপস্থিতি তথ্য';
+                        echo 'শিক্ষার্থী তথ্য';
                     ?>
                 </h3>
             </div>

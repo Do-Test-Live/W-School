@@ -11,6 +11,11 @@ date_default_timezone_set("Asia/Dhaka");
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Khulna University School</title>
     <?php include ('include/css.php');?>
+    <style>
+        .card-body{
+            min-height: 200px;
+        }
+    </style>
 </head>
 <body>
 
@@ -27,18 +32,14 @@ date_default_timezone_set("Asia/Dhaka");
 
         <div class="carousel slide" id="carouselExampleCaptions">
             <div class="carousel-indicators">
-                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
-                        data-bs-target="#carouselExampleCaptions" type="button"></button>
                 <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleCaptions"
                         type="button"></button>
                 <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleCaptions"
                         type="button"></button>
             </div>
             <div class="carousel-inner">
+
                 <div class="carousel-item active">
-                    <img alt="..." class="d-block w-100" src="assets/images/banner/1.jpg">
-                </div>
-                <div class="carousel-item">
                     <img alt="..." class="d-block w-100" src="assets/images/banner/2.jpg">
                 </div>
                 <div class="carousel-item">
@@ -105,18 +106,6 @@ date_default_timezone_set("Asia/Dhaka");
                             উচ্চশিক্ষা চালিয়েছেন এবং ব্যবসা, বিজ্ঞান সহ বিভিন্ন ক্ষেত্রে সফল ক্যারিয়ার তৈরি করেছেন।
                             যশোরের সাথে স্কুলের অধিভুক্তি নিশ্চিত করেছে যে আমাদের শিক্ষার্থীরা একটি শক্তিশালী একাডেমিক
                             ভিত্তি পেয়েছে যা তাদের উচ্চ শিক্ষা এবং এর বাইরের চ্যালেঞ্জগুলির জন্য প্রস্তুত করে।</p>
-                        <p>বিদ্যালয়ের উল্লেখযোগ্য অর্জনগুলির মধ্যে একটি হল অন্তর্ভুক্তি এবং লিঙ্গ সমতার প্রতি
-                            প্রতিশ্রুতি। একটি সহ-শিক্ষা প্রতিষ্ঠান হিসাবে কাজ করছে, খুলনা বিশ্ববিদ্যালয় স্কুল ছেলে এবং
-                            মেয়ে উভয়ের জন্য মানসম্পন্ন শিক্ষায় প্রবেশের সমান সুযোগ প্রদান করেছে। বৈচিত্র্য এবং
-                            অন্তর্ভুক্তির প্রতি এই প্রতিশ্রুতি শুধুমাত্র শিক্ষার পরিবেশকে সমৃদ্ধ করেনি বরং বাধাগুলি ভেঙে
-                            দিতে এবং শিক্ষায় সমতাকে উন্নীত করতেও অবদান রেখেছে।</p>
-                        <p>স্কুলের ম্যানেজিং কমিটি এর সাফল্যে মুখ্য ভূমিকা পালন করেছে। তাদের উত্সর্গ এবং কৌশলগত
-                            তত্ত্বাবধান শ্রেষ্ঠত্বের জন্য স্কুলের খ্যাতি বজায় রাখতে সাহায্য করেছে। এই ম্যানেজমেন্ট টিম
-                            নিশ্চিত করে যে স্কুলটি দক্ষতার সাথে পরিচালনা করে, শিক্ষার উচ্চ মান বজায় রাখে এবং
-                            শিক্ষার্থীদের ক্রমবর্ধমান চাহিদা মেটাতে ক্রমাগত এর সুবিধা এবং সংস্থানগুলিকে উন্নত করে। খুলনা
-                            বিশ্ববিদ্যালয় স্কুল একটি মাধ্যমিক-স্তরের প্রতিষ্ঠান হিসাবে সরকার কর্তৃক মাধ্যমিক বিদ্যালয়ের
-                            স্বীকৃতি প্রতিষ্ঠিত শিক্ষাগত মানগুলির বিশ্বাসযোগ্যতা এবং আনুগত্যের উপর জোর দেয়। এই স্বীকৃতি
-                            মানসম্পন্ন শিক্ষা এবং নৈতিক অনুশীলনের প্রতি স্কুলের অঙ্গীকারের প্রমাণ হিসাবে কাজ করে।</p>
                     </div>
                 </div>
             </div>

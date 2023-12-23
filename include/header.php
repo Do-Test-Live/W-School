@@ -87,7 +87,7 @@
                                 ?>
                                 <li><a class="dropdown-item" href="admin/<?php echo $fetch_link[0]['file'];?>" target="_blank">ফী সমূহ</a></li>
                                 <li><a class="dropdown-item" href="Academy?id=7">অভিভাবক নির্দেশিকা </a></li>
-                                <li><a class="dropdown-item" href="Academy?id=8">শিক্ষার্থী উপস্থিতি তথ্য</a></li>
+                                <li><a class="dropdown-item" href="Academy?id=8">শিক্ষার্থী তথ্য</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -113,11 +113,12 @@
                                 $prospectus = $db_handle->runQuery("select filelink from admission_info where id = '1'");
                                 $admission_rules = $db_handle->runQuery("select filelink from admission_info where id = '2'");
                                 $syllabus = $db_handle->runQuery("select filelink from admission_info where id = '3'");
+                                $result = $db_handle->runQuery("select filelink from admission_info where id = '4'");
                                 ?>
                                 <li><a class="dropdown-item" href="admin/<?php echo $prospectus[0]['filelink'];?>" target="_blank">প্রস্পেক্টাস</a></li>
                                 <li><a class="dropdown-item" href="admin/<?php echo $admission_rules[0]['filelink'];?>" target="_blank">ভর্তির নিয়ামাবলি</a></li>
                                 <li><a class="dropdown-item" href="admin/<?php echo $syllabus[0]['filelink'];?>" target="_blank">ভর্তি পরিক্ষার সিলেবাস</a></li>
-                                <li><a class="dropdown-item" href="#">ভর্তি পরিক্ষার ফলাফল</a></li>
+                                <li><a class="dropdown-item" href="admin/<?php echo $result[0]['filelink'];?>" target="_blank">ভর্তি পরিক্ষার ফলাফল</a></li>
                             </ul>
                         </li>
                         <!--<li class="nav-item dropdown">

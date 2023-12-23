@@ -151,6 +151,36 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">ভর্তি পরিক্ষার ফলাফল</h4>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <?php
+                                    $fetch = $db_handle->runQuery("select * from admission_info where id = '4'");
+                                    ?>
+                                    <form action="Update" method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="example-text-input" class="form-label">ভর্তি পরিক্ষার ফলাফল</label>
+                                            <input class="form-control" type="file" name="prospectus" accept="application/pdf">
+                                        </div>
+                                        <div class="mb-3">
+                                            <iframe src="<?php echo $fetch[0]['filelink'];?>" width="500" height="500"></iframe>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" name="update_admission_result">সংরক্ষন করুন</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!-- container-fluid -->
         </div>
