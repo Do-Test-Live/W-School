@@ -38,9 +38,9 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="About-Institution">প্রতিষ্ঠান সম্পর্কে</a></li>
                                 <li><a class="dropdown-item" href="Aim">লক্ষ্য ও উদ্দেশ্য</a></li>
-                                <li><a class="dropdown-item" href="History">ইতিহাস</a></li>
+                                <!--<li><a class="dropdown-item" href="History">ইতিহাস</a></li>-->
                                 <li><a class="dropdown-item" href="Structure">ভৌত অবকাঠামো</a></li>
-                                <li><a class="dropdown-item" href="Yearly_Plan">বার্ষিক কর্ম পরিকল্পনা</a></li>
+                                <!--<li><a class="dropdown-item" href="Yearly_Plan">বার্ষিক কর্ম পরিকল্পনা</a></li>-->
                                 <li><a class="dropdown-item" href="Headmaster-Introduction">প্রধান শিক্ষক পরিচিতি</a></li>
                             </ul>
                         </li>
@@ -50,8 +50,8 @@
                                 প্রশাসনিক তথ্য
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">সভাপতির বাণী</a></li>
-                                <li><a class="dropdown-item" href="#">প্রধান শিক্ষকের বাণী</a></li>
+                                <li><a class="dropdown-item" href="Chairman_Introduction">সভাপতির বাণী</a></li>
+                                <li><a class="dropdown-item" href="Headmaster-Introduction">প্রধান শিক্ষকের বাণী</a></li>
                                 <li><a class="dropdown-item" href="Board-Member">পরিচালনা পর্ষদ তথ্য</a></li>
                                 <li><a class="dropdown-item" href="Chairman_List">সভাপতির তালিকা</a></li>
                                 <li><a class="dropdown-item" href="Headmaster_List">প্রধান শিক্ষকের তালিকা</a></li>

@@ -40,24 +40,24 @@
                                     <span data-key="t-dashboard">লক্ষ্য ও উদ্দেশ্য</span>
                                 </a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="History">
                                     <i data-feather="corner-up-left"></i>
                                     <span data-key="t-dashboard">ইতিহাস</span>
                                 </a>
-                            </li>
+                            </li>-->
                             <li>
                                 <a href="Structure">
                                     <i data-feather="feather"></i>
                                     <span data-key="t-dashboard">ভৌত অবকাঠামো</span>
                                 </a>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="Year_Plan">
                                     <i data-feather="share-2"></i>
                                     <span data-key="t-dashboard">বার্ষিক কর্ম পরিকল্পনা</span>
                                 </a>
-                            </li>
+                            </li>-->
                         </ul>
                     </li>
                     <li>

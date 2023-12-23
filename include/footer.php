@@ -33,31 +33,31 @@
             <div class="col-lg-3" style="font-size: 15px;line-height: 14px;">
                 <h5 class="fw-bolder heading">গুরুত্বপূর্ণ লিংক</h5>
                 <p class="mt-3">
-                    <a href="#" class="footer-link">এনটিআরসি</a>
+                    <a href="https://www.jessoreboard.gov.bd/" target="_blank" class="footer-link">যশোর বোর্ড</a>
                 </p>
                 <p>
-                    <a href="#" class="footer-link">মাধ্যমিক ও উচ্চ মাধ্যমিক অধিদপ্তর</a>
+                    <a href="http://www.nctb.gov.bd/" target="_blank" class="footer-link">এন, সি, টি, বি</a>
                 </p>
                 <p>
-                    <a href="#" class="footer-link"> শিক্ষা মন্ত্রণালয়</a>
+                    <a href="https://www.shed.gov.bd/" target="_blank" class="footer-link">শিক্ষা মন্ত্রনালয়</a>
                 </p>
                 <p>
-                    <a href="#" class="footer-link">কুমিল্লা বোর্ড</a>
+                    <a href="https://banbeis.gov.bd/" target="_blank" class="footer-link">ব্যানবেইস</a>
                 </p>
                 <p>
-                    <a href="#" class="footer-link">National Text Book Board (NRBB)</a>
+                    <a href="https://bangladesh.gov.bd/index.php" target="_blank" class="footer-link">জাতীয় তথ্য বাতায়ন</a>
                 </p>
                 <p>
-                    <a href="#" class="footer-link">EMIS</a>
+                    <a href="https://www.teachers.gov.bd/" target="_blank" class="footer-link">শিক্ষক বাতায়ন</a>
                 </p>
                 <p>
-                    <a href="#" class="footer-link">Multimedia Classroom Management</a>
+                    <a href="http://www.ebook.gov.bd/" target="_blank" class="footer-link">ই-বুক</a>
                 </p>
                 <p>
-                    <a href="#" class="footer-link">মাধ্যমিক ও উচ্চ মাধ্যমিক শিক্ষা চট্টগ্রাম অঞ্চল</a>
+                    <a href="https://pmo.gov.bd/" target="_blank" class="footer-link">প্রধানমন্ত্রীর কার্যালয়</a>
                 </p>
                 <p>
-                    <a href="#" class="footer-link">শিক্ষক বাতায়ন</a>
+                    <a href="http://sib.gov.bd/" target="_blank" class="footer-link">এস, আই , বি</a>
                 </p>
             </div>
         </div>

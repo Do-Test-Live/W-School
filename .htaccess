@@ -29,3 +29,5 @@ RewriteRule ^Staffs staff_list.php [NE,L]
 RewriteRule ^Complain complain.php [NE,L]
 
 RewriteRule ^Extraxuricullam sports.php [NE,L]
+
+RewriteRule ^Chairman_Introduction introduction_chairman.php [NE,L]
