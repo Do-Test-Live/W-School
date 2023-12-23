@@ -33,6 +33,8 @@ RewriteRule ^Events events.php [NE,L]
 RewriteRule ^Edit_Event edit_events.php [NE,L]
 RewriteRule ^Notice notice.php [NE,L]
 RewriteRule ^Edit_Notice edit_notice.php [NE,L]
+RewriteRule ^NOC noc.php [NE,L]
+RewriteRule ^Edit_NOC edit_noc.php [NE,L]
 
 
 

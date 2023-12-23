@@ -647,3 +647,37 @@ if(isset($_POST['update_notice'])){
 </script>";
     }
 }
+
+if(isset($_POST['update_noc'])){
+    $id = $db_handle->checkValue($_POST['id']);
+    $name = $db_handle->checkValue($_POST['name']);
+    $date = $db_handle->checkValue($_POST['date']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "pdf") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `noc` WHERE noc_id = '$id'");
+            unlink($data[0]['image']);
+            move_uploaded_file($file_tmp, "assets/img/noc/" . $file_name);
+            $image = "assets/img/noc/" . $file_name;
+            $query .= ",`file`='" . $image . "'";
+        }
+    }
+
+    $data = $db_handle->insertQuery("UPDATE `noc` SET `title`='$name',`date`='$date', `updated_at` = '$updated_at'" . $query . " where noc_id ='$id'");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='NOC';
+</script>";
+    }
+}

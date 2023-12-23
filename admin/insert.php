@@ -261,3 +261,31 @@ if(isset($_POST['insert_notice'])){
 </script>";
     }
 }
+
+if(isset($_POST['insert_noc'])){
+    $name = $db_handle->checkValue($_POST['name']);
+    $date = $db_handle->checkValue($_POST['date']);
+    $image = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "pdf") {
+            $image = '';
+        } else {
+            move_uploaded_file($file_tmp, "assets/img/noc/" . $file_name);
+            $image = "assets/img/noc/" . $file_name;
+        }
+    }
+    $data = $db_handle->insertQuery("INSERT INTO `noc`(`title`, `file`, `date`, `inserted_at`) VALUES ('$name','$image','$date','$inserted_at')");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='NOC';
+</script>";
+    }
+}

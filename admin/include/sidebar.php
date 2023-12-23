@@ -84,6 +84,12 @@
                                     <span data-key="t-dashboard">প্রধান শিক্ষকদের তালিকা</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="NOC">
+                                    <i data-feather="cloud-snow"></i>
+                                    <span data-key="t-dashboard">NOC</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li>
