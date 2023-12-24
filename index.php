@@ -31,19 +31,15 @@ date_default_timezone_set("Asia/Dhaka");
         </marquee>
 
         <div class="carousel slide" id="carouselExampleCaptions">
-            <div class="carousel-indicators">
-                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleCaptions"
-                        type="button"></button>
-                <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleCaptions"
-                        type="button"></button>
-            </div>
             <div class="carousel-inner">
-
                 <div class="carousel-item active">
                     <img alt="..." class="d-block w-100" src="assets/images/banner/2.jpg">
                 </div>
                 <div class="carousel-item">
                     <img alt="..." class="d-block w-100" src="assets/images/banner/3.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img alt="..." class="d-block w-100" src="assets/images/banner/2.jpg">
                 </div>
             </div>
             <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleCaptions"
@@ -181,7 +177,7 @@ date_default_timezone_set("Asia/Dhaka");
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 mt-lg-0 mb-3">
+            <div class="col-lg-3 mt-lg-0 mb-3" id="content-slider2">
                 <div class="row">
                     <div class="col-12">
                         <div class="notice-header pt-2 pb-2">
@@ -193,7 +189,7 @@ date_default_timezone_set("Asia/Dhaka");
                     $no = $db_handle->numRows("select * from notice_board where notice_type = 'Academic Notice' order by notice_id desc");
                     for ($i = 0; $i < $no; $i++){
                         ?>
-                        <div class="col-12 ad-notice">
+                        <div class="col-12 ad-notice ad-notice2">
                             <div class="card">
                                 <div class="card-body">
                                     <button class="btn btn-outline-secondary position-absolute">
@@ -218,13 +214,13 @@ date_default_timezone_set("Asia/Dhaka");
                     ?>
                     <div class="col-12">
                         <div class="notice-header pt-3 pb-3 text-end pe-2">
-                            <button class="btn btn-light"><i class="fa-solid fa-chevron-up"></i></button>
-                            <button class="btn btn-light"><i class="fa-solid fa-chevron-down"></i></button>
+                            <button class="btn btn-light" id="prev2"><i class="fa-solid fa-chevron-up"></i></button>
+                            <button class="btn btn-light" id="next2"><i class="fa-solid fa-chevron-down"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 mt-lg-0 mb-3">
+            <div class="col-lg-3 mt-lg-0 mb-3" id="content-slider3">
                 <div class="row">
                     <div class="col-12">
                         <div class="notice-header pt-2 pb-2">
@@ -236,7 +232,7 @@ date_default_timezone_set("Asia/Dhaka");
                     $no = $db_handle->numRows("select * from notice_board where notice_type = 'Examination/Result' order by notice_id desc");
                     for ($i = 0; $i < $no; $i++){
                         ?>
-                        <div class="col-12 ad-notice">
+                        <div class="col-12 ad-notice ad-notice3">
                             <div class="card">
                                 <div class="card-body">
                                     <button class="btn btn-outline-secondary position-absolute">
@@ -261,13 +257,13 @@ date_default_timezone_set("Asia/Dhaka");
                     ?>
                     <div class="col-12">
                         <div class="notice-header pt-3 pb-3 text-end pe-2">
-                            <button class="btn btn-light"><i class="fa-solid fa-chevron-up"></i></button>
-                            <button class="btn btn-light"><i class="fa-solid fa-chevron-down"></i></button>
+                            <button class="btn btn-light" id="prev3"><i class="fa-solid fa-chevron-up"></i></button>
+                            <button class="btn btn-light" id="next3"><i class="fa-solid fa-chevron-down"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 mt-lg-0 mb-3">
+            <div class="col-lg-3 mt-lg-0 mb-3" id="content-slider4">
                 <div class="row">
                     <div class="col-12">
                         <div class="notice-header pt-2 pb-2">
@@ -279,7 +275,7 @@ date_default_timezone_set("Asia/Dhaka");
                     $no = $db_handle->numRows("select * from notice_board where notice_type = 'Tuition Fees Notice' order by notice_id desc");
                     for ($i = 0; $i < $no; $i++){
                         ?>
-                        <div class="col-12 ad-notice">
+                        <div class="col-12 ad-notice ad-notice4">
                             <div class="card">
                                 <div class="card-body">
                                     <button class="btn btn-outline-secondary position-absolute">
@@ -304,8 +300,8 @@ date_default_timezone_set("Asia/Dhaka");
                     ?>
                     <div class="col-12">
                         <div class="notice-header pt-3 pb-3 text-end pe-2">
-                            <button class="btn btn-light"><i class="fa-solid fa-chevron-up"></i></button>
-                            <button class="btn btn-light"><i class="fa-solid fa-chevron-down"></i></button>
+                            <button class="btn btn-light" id="prev4"><i class="fa-solid fa-chevron-up"></i></button>
+                            <button class="btn btn-light" id="next4"><i class="fa-solid fa-chevron-down"></i></button>
                         </div>
                     </div>
                 </div>
