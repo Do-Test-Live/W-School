@@ -124,7 +124,7 @@ if(isset($_POST['submit_complain'])){
 <!--header area end-->
 
 <!--main body content start-->
-<section style="margin-top: 15rem">
+<section class="main-body">
     <?php
     if($result == 1){
         ?>
@@ -195,7 +195,7 @@ if(isset($_POST['submit_complain'])){
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-4">
+                        <div class="col-6 col-lg-4">
                             <button type="submit" name="submit_complain" class="uk-button uk-button-primary">দাখিল করুন</button>
                         </div>
                     </div>

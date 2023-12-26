@@ -10,3 +10,21 @@
     let year = d.getFullYear();
     document.getElementById("year").innerHTML = year;
 </script>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var navbar = document.getElementById('myNavbar');
+        var distanceFromTop = navbar.offsetTop;
+
+        if (window.pageYOffset >= distanceFromTop) {
+            navbar.classList.add('fixed-top');
+        } else {
+            navbar.classList.remove('fixed-top');
+        }
+
+        if (window.pageYOffset <= distanceFromTop) {
+            navbar.classList.remove('fixed-top');
+        }
+    });
+
+</script>

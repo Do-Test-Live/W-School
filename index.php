@@ -23,7 +23,7 @@ date_default_timezone_set("Asia/Dhaka");
 <?php include ('include/header.php');?>
 <!--header area end-->
 
-<section style="margin-top: 15rem;">
+<section class="main-body">
     <div class="container-fluid">
         <marquee class="marquee-slider">
             **** ২০২৪ শিক্ষাবর্ষে নবম শ্রেণিতে ছাত্র ভর্তি বিজ্ঞপ্তি **** ২০২৪ শিক্ষাবর্ষে ছাত্র ভর্তি বিজ্ঞপ্তি-সংশোধিত

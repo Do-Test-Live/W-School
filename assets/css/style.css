@@ -145,3 +145,17 @@ ul {
     font-size: 18px;
     font-weight: bold;
 }
+.main-body{
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 992px) {
+    .logo-holder{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    .logo{
+        height: 80px;
+    }
+}

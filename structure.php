@@ -22,7 +22,7 @@ $fetch_institute_info = $db_handle->runQuery("select * from structure where id =
 <!--header area end-->
 
 <!--main body content start-->
-<section style="margin-top: 15rem">
+<section class="main-body">
     <div class="container">
         <div class="uk-cover-container uk-height-medium">
             <img src="admin/<?php echo $fetch_institute_info[0]['image'];?>" alt="" uk-cover>

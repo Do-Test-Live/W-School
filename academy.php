@@ -28,7 +28,7 @@ if(isset($_GET['id'])){
 <!--header area end-->
 
 <!--main body content start-->
-<section style="margin-top: 15rem">
+<section class="main-body">
     <div class="container">
         <div class="uk-cover-container uk-height-medium">
             <img src="assets/images/img.png" alt="" uk-cover>

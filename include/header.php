@@ -1,7 +1,7 @@
-<header class="fixed-top">
+<header>
     <div class="container-fluid">
         <div class="row header-badge">
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4 logo-holder">
                 <a href="Home">
                     <img src="assets/images/logo.png" class="logo">
                 </a>
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg">
+        <nav id="myNavbar" class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                         class="navbar-toggler ms-auto" data-bs-target="#navbarSupportedContent"
@@ -99,7 +99,7 @@
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=2">ক্রীড়া কার্যক্রম</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=3">সাংস্কৃতিক ক্লাব</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=7">ডিবেটিং ক্লাব</a></li>
-                                <li><a class="dropdown-item" href="Extraxuricullam?id=8">ল্যাংগুয়েজ ক্লাব</a></li>
+                                <li><a class="dropdown-item" href="Extraxuricullam?id=8">ইংলিশ ক্লাব</a></li>
                                 <li><a class="dropdown-item" href="Extraxuricullam?id=9">বিজ্ঞান ক্লাব</a></li>
                             </ul>
                         </li>

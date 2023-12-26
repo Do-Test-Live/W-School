@@ -26,7 +26,7 @@ $id = $_GET['id'];
 <!--header area end-->
 
 <!--main body content start-->
-<section style="margin-top: 15rem">
+<section class="main-body">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -47,7 +47,7 @@ $id = $_GET['id'];
                     if($id == 7)
                         echo 'ডিবেটিং ক্লাব';
                     if($id == 8)
-                        echo 'ল্যাংগুয়েজ ক্লাব';
+                        echo 'ইংলিশ ক্লাব';
                     if($id == 9)
                         echo 'বিজ্ঞান মেলা';
                     ?>

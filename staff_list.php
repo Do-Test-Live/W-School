@@ -19,7 +19,7 @@ date_default_timezone_set("Asia/Dhaka");
 <!--header area end-->
 
 <!--main body content start-->
-<section style="margin-top: 15rem">
+<section class="main-body">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">

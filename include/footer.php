@@ -30,7 +30,7 @@
                         style="border:0;"
                         width="100%"></iframe>
             </div>
-            <div class="col-lg-3" style="font-size: 15px;line-height: 14px;">
+            <div class="col-lg-3 mt-3 mt-lg-0" style="font-size: 15px;line-height: 14px;">
                 <h5 class="fw-bolder heading">গুরুত্বপূর্ণ লিংক</h5>
                 <p class="mt-3">
                     <a href="https://www.jessoreboard.gov.bd/" target="_blank" class="footer-link">যশোর বোর্ড</a>

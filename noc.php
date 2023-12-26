@@ -19,7 +19,7 @@ date_default_timezone_set("Asia/Dhaka");
 <!--header area end-->
 
 <!--main body content start-->
-<section style="margin-top: 15rem">
+<section class="main-body">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -41,8 +41,8 @@ date_default_timezone_set("Asia/Dhaka");
             </thead>
             <tbody>
             <?php
-            $fetch = $db_handle->runQuery("SELECT * FROM `NOC` order by noc_id desc");
-            $no = $db_handle->numRows("SELECT * FROM `NOC` order by noc_id desc");
+            $fetch = $db_handle->runQuery("SELECT * FROM `noc` order by noc_id desc");
+            $no = $db_handle->numRows("SELECT * FROM `noc` order by noc_id desc");
             for ($i=0; $i<$no; $i++){
                 ?>
                 <tr>
