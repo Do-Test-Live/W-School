@@ -15,6 +15,83 @@ date_default_timezone_set("Asia/Dhaka");
         .card-body{
             min-height: 200px;
         }
+        /* Style the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        /* Style the modal content (image) */
+        .modal-content {
+            display: block;
+            margin: auto;
+            width: auto;
+            max-width: 90%; /* Adjust as needed */
+            max-height: 90vh; /* Adjust as needed */
+            top: 50px;
+        }
+
+        /* Style the close button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Style the prev and next buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 16px;
+            margin-top: -50px; /* Adjust as needed */
+            color: #f5831a;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        /* Position the previous button to the left */
+        .prev {
+            left: 0;
+        }
+
+        /* Position the next button to the right */
+        .next {
+            right: 0;
+        }
+
+        /* Style the buttons on hover */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Style the buttons on active/focus */
+        .prev:active, .next:active {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+
     </style>
 </head>
 <body>
@@ -26,8 +103,16 @@ date_default_timezone_set("Asia/Dhaka");
 <section class="main-body">
     <div class="container-fluid">
         <marquee class="marquee-slider">
-            **** ২০২৪ শিক্ষাবর্ষে নবম শ্রেণিতে ছাত্র ভর্তি বিজ্ঞপ্তি **** ২০২৪ শিক্ষাবর্ষে ছাত্র ভর্তি বিজ্ঞপ্তি-সংশোধিত
-            (তৃতীয় ও ষষ্ঠ ) **** অফিস আদেশ ( অ্যাকাডেমিক ক্যালেন্ডার পরিবর্তন প্রসঙ্গে) ****
+            <?php
+            $notice = $db_handle->runQuery("select * from notice_board order by notice_id desc limit 4");
+            $no_notice = $db_handle->numRows("select * from notice_board order by notice_id desc limit 4");
+            for ($i = 0; $i < $no_notice; $i++) {
+                ?>
+                <a href="admin/<?php echo $notice[$i]['file']; ?>" target="_blank"
+                   style="text-decoration: none"><?php echo $notice[$i]['title']; ?></a> ***
+                <?php
+            }
+            ?>
         </marquee>
 
         <div class="carousel slide" id="carouselExampleCaptions">
@@ -68,7 +153,7 @@ date_default_timezone_set("Asia/Dhaka");
                     <div class="col-12">
                         <div style="background: linear-gradient(0deg,#00afef,#00afef);color: white" class="p-3">
                             <p class="text-center">
-                                <b class="member-name">তাসলিমা তারু </b><br/>
+                                <b class="member-name">মোসাঃ তছলিমা খাতুন</b><br/>
                                 সভাপতি
                             </p>
                             <p class="text-center member-description">
@@ -81,7 +166,7 @@ date_default_timezone_set("Asia/Dhaka");
             </div>
             <div class="col-lg-6 order-lg-1 order-0">
                 <div class="card h-100">
-                    <div class="card-body">
+                    <div class="card-body" style="text-align: justify">
                         <h2 class="about-institution heading">
                             প্রতিষ্ঠান সম্পর্কে
                         </h2>
@@ -384,6 +469,11 @@ date_default_timezone_set("Asia/Dhaka");
 
 <section>
     <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2 class="about-institution heading">স্কুল গ্যালারি</h2>
+            </div>
+        </div>
         <div class="row gallery">
             <div class="col-12 col-lg-3 col-md-3">
                 <img src="assets/images/slider/1.jpg" class="img-fluid"
@@ -417,55 +507,21 @@ date_default_timezone_set("Asia/Dhaka");
                 <img src="assets/images/slider/8.jpg" class="img-fluid"
                      alt="gallery">
             </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/9.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/10.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/11.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/12.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/13.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/14.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/15.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/16.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/17.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/18.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/19.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/20.jpg" class="img-fluid"
-                     alt="gallery">
+
+        </div>
+        <div class="row text-center">
+            <div class="col-12 mt-5">
+                <button class="uk-button uk-button-primary" id="loadMoreBtn">Load More</button>
             </div>
         </div>
+    </div>
+    <!-- Fullscreen image preview modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <button id="prevBtn" class="prev" onclick="showPrevImage();">&#10094;</button>
+        <button id="nextBtn" class="next" onclick="showNextImage()">&#10095;</button>
+
     </div>
 </section>
 
@@ -473,6 +529,103 @@ date_default_timezone_set("Asia/Dhaka");
 
 <?php include ('include/js.php');?>
 
+<script>
+    // Get the modal
+    var modal = document.getElementById("imageModal");
 
+    // Get the image and insert it inside the modal
+    var images = document.querySelectorAll('.gallery img');
+    var modalImg = document.getElementById("modalImg");
+    var currentImageIndex = 0;
+
+    // Function to open the modal with the clicked image
+    images.forEach(function(img, index){
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            currentImageIndex = index;
+        }
+    });
+
+    // Function to close the modal
+    var span = document.getElementsByClassName("close")[0];
+    modal.onclick = function(event) {
+        if (event.target == modal || event.target == span) {
+            closeModal();
+        }
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Function to show the next image
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        modalImg.src = images[currentImageIndex].src;
+    }
+
+    // Function to show the previous image
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        modalImg.src = images[currentImageIndex].src;
+    }
+
+
+
+    // Keyboard navigation
+    document.onkeydown = function(event) {
+        event = event || window.event;
+        if (modal.style.display === "block") {
+            if (event.keyCode == '37') { // Left arrow key
+                showPrevImage();
+            } else if (event.keyCode == '39') { // Right arrow key
+                showNextImage();
+            } else if (event.keyCode == '27') { // Escape key
+                closeModal();
+            }
+        }
+    };
+
+
+    // Set initial number of images to show and load each time
+    var initialLoadCount = 8;
+    var loadCount = 8;
+
+    // Function to load more images
+    document.getElementById("loadMoreBtn").addEventListener("click", function() {
+        loadMoreImages();
+    });
+
+    // Function to load more images
+    function loadMoreImages() {
+        var gallery = document.querySelector('.gallery');
+        var remainingImages = 20 - gallery.children.length; // Assuming you have 20 images initially
+        var imagesToLoad = Math.min(remainingImages, loadCount); // Load maximum specified number of images at a time
+
+        // Add more images dynamically
+        for (var i = 0; i < imagesToLoad; i++) {
+            var imageIndex = gallery.children.length + 1; // Adjust index accordingly if your images start from a different number
+            var imageDiv = document.createElement('div');
+            imageDiv.className = 'col-12 col-lg-3 col-md-3';
+            imageDiv.innerHTML = '<img src="assets/images/slider/' + imageIndex + '.jpg" class="img-fluid" alt="gallery">';
+            gallery.appendChild(imageDiv);
+        }
+
+        // Hide the load more button if no more images to load
+        if (gallery.children.length === 20) {
+            document.getElementById("loadMoreBtn").style.display = "none";
+        }
+    }
+
+    // Initially hide all images after the first 8
+    document.querySelectorAll('.gallery .col-12').forEach(function(element, index) {
+        if (index >= initialLoadCount) {
+            element.style.display = "none";
+        }
+    });
+
+</script>
 </body>
 </html>

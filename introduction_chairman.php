@@ -27,10 +27,10 @@ date_default_timezone_set("Asia/Dhaka");
             </div>
             <div class="col-6 col-lg-8 col-md-8 my-auto">
                 <p>
-                    <b class="member-name">তাসলিমা তারু </b><br/>
+                    <b class="member-name">মোসাঃ তছলিমা খাতুন</b><br/>
                     সভাপতি
                 </p>
-                <p class="member-description">যোগদানের তারিখঃ ১ জানুয়ারি, ২০২০</p>
+                <p class="member-description">যোগদানের তারিখঃ ***</p>
                 <p class="member-description">শিক্ষাগত যোগ্যতাঃ ***</p>
                 <p class="member-description">মোবাইল নাম্বারঃ ***</p>
             </div>
