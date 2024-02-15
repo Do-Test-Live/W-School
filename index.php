@@ -12,85 +12,6 @@ date_default_timezone_set("Asia/Dhaka");
     <title>Khulna University School</title>
     <?php include ('include/css.php');?>
     <style>
-        .card-body{
-            min-height: 200px;
-        }
-        /* Style the modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.9);
-        }
-
-        /* Style the modal content (image) */
-        .modal-content {
-            display: block;
-            margin: auto;
-            width: auto;
-            max-width: 90%; /* Adjust as needed */
-            max-height: 90vh; /* Adjust as needed */
-            top: 50px;
-        }
-
-        /* Style the close button */
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        /* Style the prev and next buttons */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: auto;
-            padding: 16px;
-            margin-top: -50px; /* Adjust as needed */
-            color: #f5831a;
-            font-weight: bold;
-            font-size: 20px;
-            transition: 0.3s;
-        }
-
-        /* Position the previous button to the left */
-        .prev {
-            left: 0;
-        }
-
-        /* Position the next button to the right */
-        .next {
-            right: 0;
-        }
-
-        /* Style the buttons on hover */
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        /* Style the buttons on active/focus */
-        .prev:active, .next:active {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
 
     </style>
 </head>
@@ -153,7 +74,7 @@ date_default_timezone_set("Asia/Dhaka");
                     <div class="col-12">
                         <div style="background: linear-gradient(0deg,#00afef,#00afef);color: white" class="p-3">
                             <p class="text-center">
-                                <b class="member-name">মোসাঃ তছলিমা খাতুন</b><br/>
+                                <b class="member-name">মোসাঃ তাছলিমা খাতুন</b><br/>
                                 সভাপতি
                             </p>
                             <p class="text-center member-description">
@@ -611,6 +532,14 @@ date_default_timezone_set("Asia/Dhaka");
             imageDiv.className = 'col-12 col-lg-3 col-md-3';
             imageDiv.innerHTML = '<img src="assets/images/slider/' + imageIndex + '.jpg" class="img-fluid" alt="gallery">';
             gallery.appendChild(imageDiv);
+
+            // Attach event listener to the newly added image
+            var newImage = imageDiv.querySelector('img');
+            newImage.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                currentImageIndex = index;
+            };
         }
 
         // Hide the load more button if no more images to load

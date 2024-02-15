@@ -27,7 +27,7 @@ date_default_timezone_set("Asia/Dhaka");
             </div>
             <div class="col-6 col-lg-8 col-md-8 my-auto">
                 <p>
-                    <b class="member-name">মোসাঃ তছলিমা খাতুন</b><br/>
+                    <b class="member-name">মোসাঃ তাছলিমা খাতুন</b><br/>
                     সভাপতি
                 </p>
                 <p class="member-description">যোগদানের তারিখঃ ***</p>
