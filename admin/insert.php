@@ -289,3 +289,29 @@ if(isset($_POST['insert_noc'])){
 </script>";
     }
 }
+
+if(isset($_POST['gallery-image'])){
+    $image = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            move_uploaded_file($file_tmp, "assets/img/gallery/" . $file_name);
+            $image = "assets/img/gallery/" . $file_name;
+        }
+    }
+    $data = $db_handle->insertQuery("INSERT INTO `gallery` (`image`, `inserted_at`) VALUES ('$image','$inserted_at')");
+    if($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Gallery';
+</script>";
+    }
+}

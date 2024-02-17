@@ -36,3 +36,15 @@ if(isset($_GET['noc_id'])){
             window.location.href='NOC';
 </script>";
 }
+
+
+if(isset($_GET['gallery_id'])){
+    $data = $db_handle->runQuery("select * FROM `gallery` WHERE id='{$_GET['noc_id']}'");
+    unlink($data[0]['image']);
+    $db_handle->insertQuery("delete from gallery where id=" . $_GET['noc_id'] . "");
+    echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Gallery';
+</script>";
+}

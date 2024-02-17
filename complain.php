@@ -17,10 +17,11 @@ if(isset($_POST['submit_complain'])){
     $name = $db_handle->checkValue($_POST['name']);
     $contact_no = $db_handle->checkValue($_POST['contact_no']);
     $class = $db_handle->checkValue($_POST['class']);
+    $roll_no = $db_handle->checkValue($_POST['roll_no']);
     $description = $db_handle->checkValue($_POST['description']);
     $inserted_at= date("Y-m-d H:i:s");
 
-    $insert = $db_handle->insertQuery("INSERT INTO `complain`(`name`, `contact_no`, `class`, `description`, `inserted_at`) VALUES ('$name','$contact_no','$class','$description','$inserted_at')");
+    $insert = $db_handle->insertQuery("INSERT INTO `complain`(`name`, `contact_no`, `class`, `roll`, `description`, `inserted_at`) VALUES ('$name','$contact_no','$class','$roll_no','$description','$inserted_at')");
 
     $email_to = 'kus05ku@gmail.com';
     $subject = 'Email From Khulna University School';
@@ -186,6 +187,12 @@ if(isset($_POST['submit_complain'])){
                                 <option value="৯ম">৯ম শ্রেণী</option>
                                 <option value="১০ম">১০ম শ্রেণী</option>
                             </select>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" type="number" placeholder="রোল নাম্বার" name="roll_no" required>
                         </div>
                     </div>
 

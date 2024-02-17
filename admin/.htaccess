@@ -36,6 +36,7 @@ RewriteRule ^Edit_Notice edit_notice.php [NE,L]
 RewriteRule ^NOC noc.php [NE,L]
 RewriteRule ^Edit_NOC edit_noc.php [NE,L]
 RewriteRule ^Academy academy.php [NE,L]
+RewriteRule ^Gallery gallery.php [NE,L]
 
 
 

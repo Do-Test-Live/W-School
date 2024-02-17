@@ -396,43 +396,22 @@ date_default_timezone_set("Asia/Dhaka");
             </div>
         </div>
         <div class="row gallery">
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/1.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/2.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/3.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/4.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/5.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/6.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/7.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-            <div class="col-12 col-lg-3 col-md-3">
-                <img src="assets/images/slider/8.jpg" class="img-fluid"
-                     alt="gallery">
-            </div>
-
+            <?php
+            $fetch_gallery = $db_handle->runQuery("select * from gallery order by id desc limit 8");
+            $no_fetch_gallery = $db_handle->numRows("select * from gallery order by id desc limit 8");
+            for ($i=0; $i < $no_fetch_gallery; $i++){
+                ?>
+                <div class="col-12 col-lg-3 col-md-3">
+                    <img src="admin/<?php echo $fetch_gallery[$i]['image'];?>" class="img-fluid"
+                         alt="gallery">
+                </div>
+                <?php
+            }
+            ?>
         </div>
         <div class="row text-center">
             <div class="col-12 mt-5">
-                <button class="uk-button uk-button-primary" id="loadMoreBtn">Load More</button>
+                <a class="uk-button uk-button-primary" href="Gallery">আরও দেখুন</a>
             </div>
         </div>
     </div>
@@ -508,52 +487,6 @@ date_default_timezone_set("Asia/Dhaka");
             }
         }
     };
-
-
-    // Set initial number of images to show and load each time
-    var initialLoadCount = 8;
-    var loadCount = 8;
-
-    // Function to load more images
-    document.getElementById("loadMoreBtn").addEventListener("click", function() {
-        loadMoreImages();
-    });
-
-    // Function to load more images
-    function loadMoreImages() {
-        var gallery = document.querySelector('.gallery');
-        var remainingImages = 20 - gallery.children.length; // Assuming you have 20 images initially
-        var imagesToLoad = Math.min(remainingImages, loadCount); // Load maximum specified number of images at a time
-
-        // Add more images dynamically
-        for (var i = 0; i < imagesToLoad; i++) {
-            var imageIndex = gallery.children.length + 1; // Adjust index accordingly if your images start from a different number
-            var imageDiv = document.createElement('div');
-            imageDiv.className = 'col-12 col-lg-3 col-md-3';
-            imageDiv.innerHTML = '<img src="assets/images/slider/' + imageIndex + '.jpg" class="img-fluid" alt="gallery">';
-            gallery.appendChild(imageDiv);
-
-            // Attach event listener to the newly added image
-            var newImage = imageDiv.querySelector('img');
-            newImage.onclick = function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                currentImageIndex = index;
-            };
-        }
-
-        // Hide the load more button if no more images to load
-        if (gallery.children.length === 20) {
-            document.getElementById("loadMoreBtn").style.display = "none";
-        }
-    }
-
-    // Initially hide all images after the first 8
-    document.querySelectorAll('.gallery .col-12').forEach(function(element, index) {
-        if (index >= initialLoadCount) {
-            element.style.display = "none";
-        }
-    });
 
 </script>
 </body>

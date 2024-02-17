@@ -23,6 +23,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="Gallery">
+                            <i data-feather="image"></i>
+                            <span data-key="t-dashboard">ফটো গ্যালারি</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="javascript: void(0);" class="has-arrow">
                             <i data-feather="grid"></i>
                             <span data-key="t-apps">প্রতিষ্ঠান পরিচিতি</span>

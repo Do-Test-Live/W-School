@@ -42,6 +42,7 @@
                                 <li><a class="dropdown-item" href="Structure">ভৌত অবকাঠামো</a></li>
                                 <!--<li><a class="dropdown-item" href="Yearly_Plan">বার্ষিক কর্ম পরিকল্পনা</a></li>-->
                                 <li><a class="dropdown-item" href="Headmaster-Introduction">প্রধান শিক্ষক পরিচিতি</a></li>
+                                <li><a class="dropdown-item" href="Gallery">স্কুল গ্যালারি</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

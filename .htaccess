@@ -35,3 +35,5 @@ RewriteRule ^Chairman_Introduction introduction_chairman.php [NE,L]
 RewriteRule ^NOC noc.php [NE,L]
 
 RewriteRule ^Academy academy.php [NE,L]
+
+RewriteRule ^Gallery gallery.php [NE,L]
