@@ -99,17 +99,17 @@ $admin_details = $db_handle->runQuery("select * from admin where admin_id = {$_S
                                                     <div class="mb-3">
                                                         <label for="example-text-input" class="form-label">অনুষ্ঠান শুরুর সময়</label>
                                                         <input class="form-control" type="time" id="example-text-input"
-                                                               name="start_time" required>
+                                                               name="start_time">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="example-text-input" class="form-label">অনুষ্ঠান শেষের তারিখ</label>
                                                         <input class="form-control" type="date" id="example-text-input"
-                                                               name="end_date" required>
+                                                               name="end_date">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="example-text-input" class="form-label">অনুষ্ঠান শেষের সময়</label>
                                                         <input class="form-control" type="time" id="example-text-input"
-                                                               name="end_time" required>
+                                                               name="end_time">
                                                     </div>
                                                     <div class="text-center mt-4">
                                                         <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">বাতিন করুন</button>

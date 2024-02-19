@@ -23,6 +23,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="Banner">
+                            <i data-feather="image"></i>
+                            <span data-key="t-dashboard">মূল ব্যনার</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="Gallery">
                             <i data-feather="image"></i>
                             <span data-key="t-dashboard">ফটো গ্যালারি</span>

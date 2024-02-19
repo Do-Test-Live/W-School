@@ -38,15 +38,17 @@ date_default_timezone_set("Asia/Dhaka");
 
         <div class="carousel slide" id="carouselExampleCaptions">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img alt="..." class="d-block w-100" src="assets/images/banner/2.jpg">
-                </div>
-                <div class="carousel-item">
-                    <img alt="..." class="d-block w-100" src="assets/images/banner/3.jpg">
-                </div>
-                <div class="carousel-item">
-                    <img alt="..." class="d-block w-100" src="assets/images/banner/2.jpg">
-                </div>
+                <?php
+                $fetch_banner = $db_handle->runQuery("select * from main_banner");
+                $no_fetch_banner = $db_handle->numRows("select * from main_banner");
+                for ($i=0; $i<$no_fetch_banner; $i++){
+                    ?>
+                    <div class="carousel-item <?php if ($i == 0) echo 'active';?>">
+                        <img alt="Khulna University School" class="d-block w-100" src="<?php echo $fetch_banner[$i]['file'];?>">
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
             <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleCaptions"
                     type="button">

@@ -843,3 +843,33 @@ if(isset($_POST['update_admission_result'])){
 </script>";
     }
 }
+
+
+if(isset($_POST['banner_image'])){
+    $id = $db_handle->checkValue($_POST['id']);
+    $file = '';
+    if (!empty($_FILES['image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `main_banner` WHERE banner_id = '$id'");
+            unlink('../' . $data[0]['file']);
+            move_uploaded_file($file_tmp, "../assets/images/banner/" . $file_name);
+            $file = "assets/images/banner/" . $file_name; // Ensure correct assignment here
+        }
+    }
+    $data = $db_handle->insertQuery("UPDATE `main_banner` SET `file`='$file',`updated_at`='$updated_at' WHERE `banner_id` = '$id'");
+    if ($data){
+        echo "
+        <script>
+            document.cookie = 'alert = 3';
+            window.location.href='Banner';
+</script>";
+    }
+}
